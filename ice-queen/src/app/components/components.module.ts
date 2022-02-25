@@ -6,7 +6,6 @@ import { InputComponent } from './input/input.component';
 import { FooterComponent } from './footer/footer.component';
 
 
-
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -20,7 +19,8 @@ import { FooterComponent } from './footer/footer.component';
 
   exports: [
     HeaderComponent,
-    InputComponent
+    InputComponent,
+    FooterComponent
   ]
 })
 export class ComponentsModule { }
