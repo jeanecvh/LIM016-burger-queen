@@ -8,6 +8,10 @@ import { ComponentsModule } from './components/components.module'
 import { PagesModule } from './pages/pages.module';
 
 
+
+import {MatIconModule} from '@angular/material/icon';
+
+
 @NgModule({
   declarations: [
     AppComponent,
