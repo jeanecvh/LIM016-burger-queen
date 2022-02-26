@@ -9,9 +9,6 @@ import { PagesModule } from './pages/pages.module';
 
 
 
-import {MatIconModule} from '@angular/material/icon';
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +19,7 @@ import {MatIconModule} from '@angular/material/icon';
     MaterialModule,
     BrowserAnimationsModule,
     ComponentsModule,
-    PagesModule
+    PagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
