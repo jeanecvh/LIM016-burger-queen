@@ -4,6 +4,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+
 
 
 @NgModule({
@@ -12,8 +16,11 @@ import {MatIconModule} from '@angular/material/icon';
     MatGridListModule,
     MatInputModule,
     MatFormFieldModule,
-    MatIconModule
-  ]
+    MatIconModule,
+    MatAutocompleteModule,
+    MatDividerModule,
+    MatButtonModule
+  ],
 })
 
 export class MaterialModule {}

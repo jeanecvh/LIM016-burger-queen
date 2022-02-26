@@ -1,6 +1,24 @@
 footer{
+  display: flex;
   text-align: center;
+  justify-content: space-around;
+  background-color: #8a8a8a;
+  color: white;
 }
-.example-spacer {
-  flex: 1 1 auto;
+
+.div-footer{
+  margin-top: 0.5%;
 }
+
+.example-spacer{
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:link, a:visited,  a:hover, a:active
+{
+    color: #ffff;
+    text-decoration: none;
+}
+
+
