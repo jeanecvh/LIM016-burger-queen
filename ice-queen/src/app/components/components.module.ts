@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { InputComponent } from './input/input.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -13,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     InputComponent,
     FooterComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   exports: [
     HeaderComponent,
     InputComponent,
-    FooterComponent
+    FooterComponent,
+    ProfileComponent
   ]
 })
 export class ComponentsModule { }
