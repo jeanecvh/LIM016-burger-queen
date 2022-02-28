@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material.module'
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -11,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     HeaderComponent,
     FooterComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { FooterComponent } from './footer/footer.component';
 
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ProfileComponent
   ]
 })
 export class ComponentsModule { }
