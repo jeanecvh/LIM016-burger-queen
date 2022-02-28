@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators, FormGroup} from '@angular/forms';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
-  selector: 'app-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class InputComponent implements OnInit {
+export class LoginComponent implements OnInit {
+
   constructor() { }
   hide = true;
 
@@ -17,4 +18,5 @@ export class InputComponent implements OnInit {
   }
   ngOnInit(): void {
   }
+
 }
