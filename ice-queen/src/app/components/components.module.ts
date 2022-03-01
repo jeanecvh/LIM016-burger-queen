@@ -17,7 +17,6 @@ import { ProfileComponent } from './profile/profile.component';
   imports: [
     CommonModule,
     MaterialModule,
-    ReactiveFormsModule
   ],
 
   exports: [
