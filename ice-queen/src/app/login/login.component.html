@@ -12,16 +12,16 @@
         </div>
         <div class = "input-email">
           <mat-form-field appearance="outline" floatLabel="auto">
-            <input matInput placeholder="tucorreo@dominio.com" class ="inputs" [formControl]="email" hideRequired>
+            <input matInput placeholder="tucorreo@dominio.com" class ="inputs" [(ngModel)]="usuario.email" hideRequired>
           </mat-form-field>
         </div>
         <div class="input-password">
           <mat-form-field appearance="outline" floatLabel="auto">
-            <input matInput placeholder="contraseña" [type]="hide ? 'password' : 'text'" class ="inputs" hideRequired>
+            <input matInput placeholder="contraseña" [type]="hide ? 'password' : 'text'" [(ngModel)]="usuario.password" hideRequired>
           </mat-form-field>
         </div>
         <div class="div-button">
-          <button mat-raised-button color="primary">INGRESAR</button>
+          <button mat-raised-button color="primary" (click)="Ingresar()">INGRESAR</button>
         </div>
       </div>
     </mat-grid-tile>

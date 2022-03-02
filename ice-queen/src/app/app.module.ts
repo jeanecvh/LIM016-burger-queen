@@ -8,8 +8,6 @@ import { ComponentsModule } from './components/components.module';
 import { PagesModule } from './login/pages.module'
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +18,7 @@ import { PagesModule } from './login/pages.module'
     MaterialModule,
     BrowserAnimationsModule,
     ComponentsModule,
-    PagesModule
+    PagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
