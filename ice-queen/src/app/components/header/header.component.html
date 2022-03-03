@@ -1,9 +1,18 @@
 
     <header>
-            <mat-toolbar class="header ">
-                <mat-toolbar-row>
-                  <img class ="logo" src="./../../../assets/img/ice-cream.png">
-                <span>Ice-Queen</span>
-                </mat-toolbar-row>
-            </mat-toolbar>
+      <mat-toolbar class="header ">
+        <nav class="navbar">
+          <a href="#">
+            <img class="logo" src="./../../../assets/img/cafe.png" alt="">
+          </a>
+          <a href="#" *ngIf="userLogged|async as user" >
+            <img class="logo" src="./../../../assets/img/cafe.png" alt="">
+            {{user.email}}
+          </a>
+        </nav>
+        <mat-toolbar-row>
+          <img class ="logo" src="./../../../assets/img/ice-cream.png">
+        <span>Ice-Queen</span>
+        </mat-toolbar-row>
+      </mat-toolbar>
     </header>

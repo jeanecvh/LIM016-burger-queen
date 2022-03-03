@@ -20,7 +20,8 @@ import { PagesModule } from './login/pages.module'
     MaterialModule,
     BrowserAnimationsModule,
     ComponentsModule,
-    PagesModule
+    PagesModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

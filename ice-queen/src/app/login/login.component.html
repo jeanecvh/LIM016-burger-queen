@@ -1,3 +1,4 @@
+
 <section id="login-container" class="login-container">
   <mat-grid-list cols="2" rowHeight="1:1">
     <mat-grid-tile class="login-left">
@@ -12,19 +13,29 @@
         </div>
         <div class = "input-email">
           <mat-form-field appearance="outline" floatLabel="auto">
-            <input matInput placeholder="tucorreo@dominio.com" class ="inputs" [formControl]="email" hideRequired>
+            <input matInput placeholder="tucorreo@dominio.com" class ="inputs" [(ngModel)]="usuario.email">
           </mat-form-field>
         </div>
         <div class="input-password">
           <mat-form-field appearance="outline" floatLabel="auto">
-            <input matInput placeholder="contraseña" [type]="hide ? 'password' : 'text'" class ="inputs" hideRequired>
+            <input matInput placeholder="contraseña" [type]="hide ? 'password' : 'text'" [(ngModel)]="usuario.password">
           </mat-form-field>
         </div>
+
         <div class="div-button">
-          <button mat-raised-button color="primary">INGRESAR</button>
+          <button mat-raised-button color="primary" (click)="ingresarConGoogle()">INGRESAR CON GOOGLE</button>
+        </div>
+
+        <div class="div-button">
+          <button mat-raised-button color="primary" (click)="ingresar()">INGRESAR</button>
         </div>
       </div>
     </mat-grid-tile>
   </mat-grid-list>
+
+  <div>
+    <button (click)="obtenerUsuarioLogeado()">Usuario Logeado</button>
+    <button (click)="logout()">Logout</button>
+  </div>
 </section>
 
