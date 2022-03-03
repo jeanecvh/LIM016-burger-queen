@@ -2,8 +2,14 @@
     <header>
             <mat-toolbar class="header ">
                 <mat-toolbar-row>
-                  <img class ="logo" src="./../../../assets/img/ice-cream.png">
-                <span>Ice-Queen</span>
+                  <div class="div-header">
+                    <img class ="logo" src="./../../../assets/img/ice-cream.png">
+                    <span>Ice-Queen</span>
+                  </div>
+                  <div class="div-header">
+                    <a href="#" *ngIf="userLogged|async as user"></a>
+                    <img src="./../../../assets/img/usuario.png" alt="">
+                  </div>
                 </mat-toolbar-row>
             </mat-toolbar>
     </header>

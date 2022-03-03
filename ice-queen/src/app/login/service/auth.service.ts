@@ -15,4 +15,12 @@ export class AuthService {
       return null
     }
   }
+
+  getUser() {
+    return  this.afauth.authState;
+  }
+
+  logOut(){
+    return this.afauth.signOut();
+  }
 }

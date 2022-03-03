@@ -33,6 +33,19 @@ export class LoginComponent implements OnInit {
 
     })
   }
+
+  obtenerUsuario(){
+    this.authService.getUser().subscribe(res => {
+      console.log(res?.email);
+    })
+  }
+
+  logOutUser(){
+    this.authService.logOut();
+    console.log('se deslogueó');
+
+  }
+
   ngOnInit(): void {
   }
 
