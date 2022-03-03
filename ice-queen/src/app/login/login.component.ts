@@ -25,11 +25,19 @@ export class LoginComponent implements OnInit {
     return this.email.hasError('email') ? 'Correo inválido' : '';
   }
 
-  ingresar(){
+  crearUsuario(){
     console.log(this.usuario)
     const { email, password } = this.usuario
     this.authService.register(email, password).then(res => {
-      console.log('Se registró',res)
+      console.log('Ingreso con correo',res)
+    })
+  }
+
+  ingresar(){
+    console.log(this.usuario)
+    const { email, password } = this.usuario
+    this.authService.login(email, password).then(res => {
+      console.log('Ingreso con correo',res)
     })
   }
 
