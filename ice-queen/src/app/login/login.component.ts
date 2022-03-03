@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
-import { AuthService } from '../service/auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 
- })
+})
 
 export class LoginComponent implements OnInit {
 
@@ -25,29 +25,31 @@ export class LoginComponent implements OnInit {
     return this.email.hasError('email') ? 'Correo inválido' : '';
   }
 
-  Ingresar(){
+  ingresar(){
     console.log(this.usuario)
-    const {email,password} = this.usuario;
-    this.authService.login(email,password).then(res => {
-      console.log('se registro: ', res);
-
+    const { email, password } = this.usuario
+    this.authService.register(email, password).then(res => {
+      console.log('Se registró',res)
     })
   }
 
-  obtenerUsuario(){
-    this.authService.getUser().subscribe(res => {
-      console.log(res?.email);
+  ingresarConGoogle(){
+    const { email, password } = this.usuario
+    this.authService.loginWithGoogle(email, password).then(res => {
+      console.log('Se registró con google',res)
     })
   }
 
-  logOutUser(){
-    this.authService.logOut();
-    console.log('se deslogueó');
-
+  obtenerUsuarioLogeado(){
+    this.authService.getUserLogged().subscribe(res =>{
+      console.log(res?.email)
+    })
+  }
+  logout(){
+   this.authService.logout();
   }
 
   ngOnInit(): void {
   }
-
 }
 
