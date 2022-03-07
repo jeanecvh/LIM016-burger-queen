@@ -33,12 +33,17 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  ingresar(){
+  async ingresar(){
     console.log(this.usuario)
     const { email, password } = this.usuario
-    this.authService.login(email, password).then(res => {
-      console.log('Ingreso con correo',res)
-    })
+    const loginUser = await this.authService.login(email, password);
+    console.log('user:', loginUser?.user)
+    console.log('user2')
+    if(loginUser) {
+      window.location.href = 'profile'
+    } else {
+
+    }
   }
 
   ingresarConGoogle(){
@@ -55,6 +60,10 @@ export class LoginComponent implements OnInit {
   }
   logout(){
    this.authService.logout();
+  }
+
+  save(){
+    return sessionStorage.setItem(this.usuario.email,'');
   }
 
   ngOnInit(): void {

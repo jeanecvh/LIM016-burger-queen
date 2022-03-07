@@ -39,8 +39,19 @@ export class AuthService {
   getUserLogged(){
     return this.afauth.authState
   }
+  async logout(){
+    try {
+      await this.afauth.signOut()
+    }catch(err){
+      console.log(err);
+    };
+  };
 
-  logout(){
-    this.afauth.signOut()
-  }
-}
+  async findUser(user:any){
+    try {
+      await this.afauth.onAuthStateChanged(user);
+    }catch(err){
+    console.log(err);
+    }
+  };
+};
