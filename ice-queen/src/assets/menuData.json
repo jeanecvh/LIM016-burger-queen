@@ -1,0 +1,104 @@
+{
+    "menu": [
+        {
+            "id":"m001",
+            "image": "",
+            "Helado":  [
+                {
+                    "flavors": "fresa",
+                    "price": 13.50
+                },
+                {
+                    "flavors": "Lúcuma",
+                    "price": 20.00
+                },
+                {
+                    "flavors": "Maracumango",
+                    "price": 13.50
+                },
+                {
+                    "flavors": "Frambruesa",
+                    "price": 13.50
+                },
+                {
+                    "flavors": "Chocolate",
+                    "price": 15.00
+                },
+                {
+                    "flavors": "Coco",
+                    "price": 26
+                }
+
+            ]
+        },
+        {
+            "id":"m002",
+            "image": "",
+            "Malteadas":  [
+                {
+                    "flavors": "Fresa",
+                    "price": 16.00
+                },
+                {
+                    "flavors": "Lúcuma",
+                    "price": 20.00
+                },
+                {
+                    "flavors": "Chocolate",
+                    "price": 16.00
+                },
+                {
+                    "flavors": "Frappé de coco",
+                    "price": 18.00
+                },
+                {
+                    "flavors": "Zumo de piña",
+                    "price": 16.00
+                },
+                {
+                    "flavors": "Vainilla y cappuccino",
+                    "price": 20.00
+                }
+
+            ]
+        },
+        {
+            "id":"m003",
+            "image": "",
+            "Otras Bebidas":  [
+                {
+                    "Type": "Café",
+                    "price": 13.50
+                },
+                {
+                    "Type": "Gaseosa inka personal",
+                    "price": 20.00
+                },
+                {
+                    "Type": "Gaseosa cocacola Personal",
+                    "price": 13.50
+                }
+
+            ]
+        },
+        {
+            "id":"m004",
+            "image": "",
+            "sandwich":  [
+                {
+                    "Type": "Pollo",
+                    "price": 16.00
+                },
+                {
+                    "Type": "Pavo",
+                    "price": 20.00
+                },
+                {
+                    "Type": "Chancho",
+                    "price": 16.50
+                }
+
+            ]
+        }
+    ]
+}
