@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TablesComponent } from './tables/tables.component';
 import { MenuComponent } from './menu/menu.component';
+import { TablesComponent } from './tables/tables.component';
 
 
 
 @NgModule({
   declarations: [
-    TablesComponent,
-    MenuComponent
+    MenuComponent,
+    TablesComponent
   ],
   imports: [
     CommonModule
