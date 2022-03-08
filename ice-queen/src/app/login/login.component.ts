@@ -11,7 +11,8 @@ import { AuthService } from '../services/auth.service';
 
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    public authService: AuthService) { }
 
   usuario= {
     email:'',
@@ -36,14 +37,7 @@ export class LoginComponent implements OnInit {
   async ingresar(){
     console.log(this.usuario)
     const { email, password } = this.usuario
-    const loginUser = await this.authService.login(email, password);
-    console.log('user:', loginUser?.user)
-    console.log('user2')
-    if(loginUser) {
-      window.location.href = 'profile'
-    } else {
-
-    }
+    const loginUser = await this.authService.SignIn(email, password);
   }
 
   ingresarConGoogle(){
@@ -51,19 +45,6 @@ export class LoginComponent implements OnInit {
     this.authService.loginWithGoogle(email, password).then(res => {
       console.log('Se registró con google',res)
     })
-  }
-
-  obtenerUsuarioLogeado(){
-    this.authService.getUserLogged().subscribe(res =>{
-      console.log(res?.email)
-    })
-  }
-  logout(){
-   this.authService.logout();
-  }
-
-  save(){
-    return sessionStorage.setItem(this.usuario.email,'');
   }
 
   ngOnInit(): void {

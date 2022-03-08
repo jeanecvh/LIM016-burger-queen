@@ -1,0 +1,81 @@
+.tables-container{
+  height: 100vh;
+}
+
+.tables-container
+{  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1.1fr 0.9fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "button-add tables-area tables-area"
+    "button-add tables-area tables-area"
+    "button-add tables-area tables-area";
+}
+
+.button-add {
+  grid-area: button-add;
+  position: relative;
+ }
+
+ .btn-add {
+  background: none;
+  width: 12vw;
+  height: 25vh;
+  position: absolute;
+  top: 25%;
+  right: 50%;
+  cursor: pointer;
+  border: 1px solid #C4C4C4;
+  border-radius: 0.5rem;
+  color: #C4C4C4;
+  font-size: 4rem;
+ }
+.tables-area { grid-area: tables-area; }
+
+.card-table-container{
+  width: 19vw;
+  border-color: #C4C4C4;
+  background-color: rgba(196, 196, 196, 0.432);
+  border: 1px solid #C4C4C4;
+  margin: 3rem;
+}
+
+.card-table-tittle{
+  background-color: white;
+  display: flex;
+  border-bottom: 1px solid #C4C4C4;
+  justify-content: space-around;
+}
+
+.tables-products{
+  color: #C4C4C4;
+  margin: 1rem;
+  border: 1px solid #c4c4c493;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+.button-take-orders{
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem;
+}
+
+.button-take-orders button{
+  background: transparent;
+  border-radius: 1.2rem;
+  border: none;
+  height: 6vh;
+  width: 10vw;
+  margin: 2%;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #E8C927;
+  border: 2px solid #E8C927;
+  color: white;
+  font-weight: bold;
+}
+
+

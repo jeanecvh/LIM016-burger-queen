@@ -9,7 +9,7 @@
             <a href="#" *ngIf="userLogged|async as user" >
               <img class="logo" src="./../../../assets/img/usuario.png" alt="">
               {{user.email}}
-              <button class="btn-singOut" (click)="signOut()">salir</button>
+              <button class="btn-singOut" (click)="authService.SignOut()">salir</button>
             </a>
           </div>
         </mat-toolbar-row>
