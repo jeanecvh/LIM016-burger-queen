@@ -2,6 +2,8 @@
   "dependencies": {
     "@angular/fire": "^7.2.1",
     "@firebase/auth": "^0.19.9",
-    "firebase": "^9.6.7"
+    "@sweetalert2/ngx-sweetalert2": "^11.0.0",
+    "firebase": "^9.6.7",
+    "sweetalert2": "^11.4.4"
   }
 }
