@@ -12,6 +12,10 @@ import { TablesComponent } from './tables/tables.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    MenuComponent,
+    TablesComponent
   ]
 })
 export class WaiterModule { }

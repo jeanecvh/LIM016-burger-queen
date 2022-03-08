@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
+// src/app/services/data.service
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dataService : DataService
+  ) { }
 
   ngOnInit(): void {
+    this.dataService.getJSON().subscribe(data => {
+      console.log(data)
+    })
   }
 
 }

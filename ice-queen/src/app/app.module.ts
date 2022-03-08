@@ -14,6 +14,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'src/environments/environment';
 import { AuthService } from './services/auth.service';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    HttpClientModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
