@@ -2,7 +2,7 @@
     "menu": [
         {
             "id":"m001",
-            "image": "",
+            "image": "../../assets/img/frozen-yogurt.png",
             "Helado":  [
                 {
                     "flavors": "fresa",

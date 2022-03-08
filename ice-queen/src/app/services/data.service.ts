@@ -7,14 +7,17 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
 
+  //@Output() disparador: BehaviorSubject<any> = new BehaviorSubject({});
+
   constructor(private http: HttpClient) { 
     this.getJSON().subscribe(data => {
-      console.log(data);
+  
     });
   }
 
   public getJSON(): Observable<any> {
-    return this.http.get("../assets/menuData.json ");
+    return this.http.get("../../assets/menuData.json");
+    // ../assets/menuData.json 
   }
  
 }
