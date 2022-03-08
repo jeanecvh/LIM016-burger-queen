@@ -1,10 +1,10 @@
 import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth} from '@angular/fire/compat/auth';
-import firebase from 'firebase/compat/app'
-import { User } from './user';
+//import firebase from 'firebase/compat/app'
+//import { User } from './user';
 import {
   AngularFirestore,
-  AngularFirestoreDocument,
+  //AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -32,58 +32,20 @@ export class AuthService {
     });
   }
 
-  SetUserData(user: any) {
-    const userRef: AngularFirestoreDocument<any> = this.afs.doc(
-      `users/${user.uid}`
-    );
-    const userData: User = {
-      uid: user.uid,
-      email: user.email,
-      emailVerified: user.emailVerified,
-    };
-    return userRef.set(userData, {
-      merge: true,
-    });
-  }
-
-  async register (email:string, password:string){
-    try {
-      return await this.afauth.createUserWithEmailAndPassword(email,password )
-    } catch (error) {
-      console.log('error en login: ', error)
-      return null;
-    }
-  }
-
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
     return user !== null && user.emailVerified !== true || false;
     //return user !== null && user.emailVerified !== false ? true : false;
   }
 
-  SignIn(email: string, password: string) {
-    return this.afauth
-      .signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        this.ngZone.run(() => {
-          this.router.navigate(['profile']);
-        });
-        this.SetUserData(result.user);
-      })
-      .catch((error) => {
-        Swal.fire({
-          icon: 'error',
-          title: 'Usuario o contraseña incorrecta',
-
-        })
-      });
-  }
-
-  async loginWithGoogle(email:string, password:string){
+  async login(email: string, password:string){
     try {
-      return await this.afauth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
-    } catch (error) {
-      console.log('error en login con Google: ', error)
+      return await this.afauth.signInWithEmailAndPassword(email,password);
+    }catch (err) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Usuario o contraseña incorrecta',
+      })
       return null;
     }
   }
@@ -99,6 +61,29 @@ export class AuthService {
     });
   }
 
+  /*
+  SetUserData(user: any) {
+    const userRef: AngularFirestoreDocument<any> = this.afs.doc(
+      `users/${user.uid}`
+    );
+    const userData: User = {
+      uid: user.uid,
+      email: user.email,
+      emailVerified: user.emailVerified,
+    };
+    return userRef.set(userData, {
+      merge: true,
+    });
+  }
+  async register (email:string, password:string){
+    try {
+      return await this.afauth.createUserWithEmailAndPassword(email,password )
+    } catch (error) {
+      console.log('error en login: ', error)
+      return null;
+    }
+  }
+
   async findUser(user:any){
     try {
       await this.afauth.onAuthStateChanged(user);
@@ -106,4 +91,28 @@ export class AuthService {
     console.log(err);
     }
   };
+
+  async loginWithGoogle(email:string, password:string){
+    try {
+      return await this.afauth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    } catch (error) {
+      console.log('error en login con Google: ', error)
+      return null;
+    }
+  }
+
+  SignIn(email: string, password: string) {
+    return this.afauth
+      .signInWithEmailAndPassword(email, password)
+      .then((result) => {
+        this.SetUserData(result.user);
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Usuario o contraseña incorrecta',
+
+        })
+      });
+  }*/
 };

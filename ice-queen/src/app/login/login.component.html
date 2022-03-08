@@ -13,17 +13,17 @@
         </div>
         <div class = "input-email">
           <mat-form-field appearance="outline" floatLabel="auto">
-            <input matInput placeholder="tucorreo@dominio.com" class ="inputs" #userName>
+            <input matInput placeholder="tucorreo@dominio.com" class ="inputs" [(ngModel)]="user.email">
           </mat-form-field>
         </div>
         <div class="input-password">
           <mat-form-field appearance="outline" floatLabel="auto">
-            <input matInput placeholder="contraseña" [type]="hide ? 'password' : 'text'" style="margin-left: 5rem" #userPassword>
+            <input matInput placeholder="contraseña" [type]="hide ? 'password' : 'text'" [(ngModel)]="user.password">
           </mat-form-field>
         </div>
 
         <div class="div-button">
-          <button mat-raised-button color="primary" (click)="authService.SignIn(userName.value, userPassword.value)">INGRESAR</button>
+          <button mat-raised-button color="primary" (click)="ingresar()">INGRESAR</button>
         </div>
       </div>
     </mat-grid-tile>

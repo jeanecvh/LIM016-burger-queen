@@ -33,7 +33,7 @@
         },
         {
             "id":"m002",
-            "image": "",
+            "image": "../../assets/img/milshake.png",
             "Malteadas":  [
                 {
                     "flavors": "Fresa",
@@ -64,7 +64,7 @@
         },
         {
             "id":"m003",
-            "image": "",
+            "image": "../../assets/img/cafe.png",
             "Otras Bebidas":  [
                 {
                     "Type": "Café",
@@ -100,5 +100,12 @@
 
             ]
         }
+    ],
+    "users": [
+      {
+        "id": "u001",
+        "email": "workers@ice-queen.com",
+        "profile": "waiter"
+      }
     ]
 }
