@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; 
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,17 +9,17 @@ export class DataService {
 
   //@Output() disparador: BehaviorSubject<any> = new BehaviorSubject({});
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.getJSON().subscribe(data => {
-  
+
     });
   }
 
   public getJSON(): Observable<any> {
-    return this.http.get("../../assets/menuData.json");
-    // ../assets/menuData.json 
+    return this.http.get("../../assets/data.json");
+    // ../assets/menuData.json
   }
- 
+
 }
 
 
