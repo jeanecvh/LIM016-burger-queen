@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { DataService } from '../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,12 +14,17 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent implements OnInit {
 
   constructor(
-    public authService: AuthService) { }
+    public authService: AuthService,
+    public dataService: DataService,
+    public router: Router
+    ) { }
 
-  usuario= {
-    email:'',
-    password: ''
-  }
+    public user = {
+      id: '',
+      email:'',
+      password: '',
+      profile:'',
+    }
   hide = true;
 
   email = new FormControl('', [Validators.required, Validators.email]);
@@ -26,26 +33,49 @@ export class LoginComponent implements OnInit {
     return this.email.hasError('email') ? 'Correo inválido' : '';
   }
 
-  crearUsuario(){
-    console.log(this.usuario)
-    const { email, password } = this.usuario
-    this.authService.register(email, password).then(res => {
-      console.log('Ingreso con correo',res)
-    })
-  }
+
 
   async ingresar(){
-    console.log(this.usuario)
-    const { email, password } = this.usuario
-    const loginUser = await this.authService.SignIn(email, password);
+    const { email, password } = this.user
+    this.authService.login(email, password).then(res => {
+      console.log('Se registró con google',res)
+    })
+    this.Profile()
   }
 
+  Profile(){
+    this.dataService.getJSON().subscribe(data => {
+      const userLog = this.authService.getUserLogged();
+      userLog.subscribe((res:any) => {
+        const userEmail = res.email;
+        const usersData = data.users;
+        console.log(userEmail , usersData);
+        const find = usersData.filter((x:any) => x.email == userEmail)
+        const profile = find[0].profile;
+        console.log(profile);
+        if (profile === 'waiter') {
+          this.router.navigateByUrl('/tables')
+        } else if (profile === "/chef"){
+          this.router.navigateByUrl('/menu')
+        };
+        this.dataService.disparador.next(find[0]);
+      })
+    })
+  }
+  /*
   ingresarConGoogle(){
-    const { email, password } = this.usuario
+    const { email, password } = this.user
     this.authService.loginWithGoogle(email, password).then(res => {
       console.log('Se registró con google',res)
     })
   }
+  crearuser(){
+    console.log(this.user)
+    const { email, password } = this.user
+    this.authService.register(email, password).then(res => {
+      console.log('Ingreso con correo',res)
+    })
+  }*/
 
   ngOnInit(): void {
   }

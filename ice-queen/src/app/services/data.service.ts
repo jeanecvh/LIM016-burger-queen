@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  //@Output() disparador: BehaviorSubject<any> = new BehaviorSubject({});
+  @Output() disparador: BehaviorSubject<any> = new BehaviorSubject({});
 
   constructor(private http: HttpClient) {
     this.getJSON().subscribe(data => {
