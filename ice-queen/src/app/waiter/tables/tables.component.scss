@@ -40,6 +40,7 @@
   background-color: rgba(196, 196, 196, 0.432);
   border: 1px solid #C4C4C4;
   margin: 3rem;
+  width: 25vw;
 }
 
 .card-table-tittle{
@@ -47,14 +48,18 @@
   display: flex;
   border-bottom: 1px solid #C4C4C4;
   justify-content: space-around;
+  padding-top: 3%;
 }
 
 .tables-products{
   color: #C4C4C4;
-  margin: 1rem;
+  margin: 1rem 2rem;
   border: 1px solid #c4c4c493;
   background-color: white;
   border-radius: 0.5rem;
+  overflow-y:scroll;
+  height:40vh;
+  width: 20vw;
 }
 
 .button-take-orders{
@@ -78,4 +83,77 @@
   font-weight: bold;
 }
 
+.tables-products::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.tables-products::-webkit-scrollbar:vertical {
+  width:10px;
+}
+.tables-products::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+  display: none;
+}
+.tables-products::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+.tables-products::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+.tables-products::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
 
+/*
+.table{
+  thead{
+    tr{
+      th{
+        text-align: center;
+      }
+    }
+  }
+}
+
+.table{
+  tbody{
+    tr{
+        border: 1px solid #797979;
+        padding: 0.5rem;
+        margin: 0.2rem;
+        display: flex;
+    }
+  }
+}
+
+
+
+.align-left{
+  text-align: left;
+}*/
+
+.table td, .table th {
+    text-align: center;
+}
+
+.number-table{
+  display: flex;
+  align-items: center;
+
+  input{
+    width: 3.5vw;
+    border: none;
+    border-bottom: #797979 2px solid;
+    background: none;
+    overflow: hidden;
+    cursor: pointer;
+    top: -12%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    outline: none;
+    font-size: small;
+    position: relative;
+    margin-left: 3%;
+  }
+}
