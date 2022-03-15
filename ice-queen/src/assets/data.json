@@ -2,11 +2,11 @@
     "menu": [
         {
             "id":"m001",
-            "image": "../../../assets/img/frozen-yogurt.png",
+            "image": "../../../assets/img/frozen-yogurt-2.png",
             "category": "Helado",
             "Helado":  [
                 {
-                    "flavors": "fresa",
+                    "flavors": "Fresa",
                     "price": 13.50
                 },
                 {
@@ -86,7 +86,7 @@
         },
         {
             "id":"m004",
-            "image": "../../../assets/img/sandwich-de-pollo.jpg",
+            "image": "../../../assets/img/sandwich-de-pollo.png",
             "category": "sandwich",
             "sandwich":  [
                 {

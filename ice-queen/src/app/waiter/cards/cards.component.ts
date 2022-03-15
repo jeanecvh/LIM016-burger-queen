@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {  ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Tables } from 'src/app/models/tables.model';
 import { TablesCollectionService } from 'src/app/services/tables-collection.service';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-cards',
@@ -10,18 +12,35 @@ import { map } from 'rxjs/operators';
 })
 export class CardsComponent implements OnInit {
 
-  arrayTables?: Tables[];
+  public tablesCollections: AngularFirestoreCollection<Tables>;
+  arrayTables?: Observable<Tables[]>;
+  /*
   currentTables?: Tables;
   currentIndex = -1;
-  ntables = "";
-  retrieveTables: any;
+  ntables = "";*/
 
-  constructor(private tablesCollectionService : TablesCollectionService) { }
+
+
+  constructor(
+    public readonly afs: AngularFirestore
+    //private tablesCollectionService : TablesCollectionService
+
+    ) {
+      this.tablesCollections = afs.collection<Tables>('arrayTables');
+      this.arrayTables = this.tablesCollections.snapshotChanges().pipe(
+        map(actions => actions.map(a => {
+          const data = a.payload.doc.data() as Tables;
+          const id = a.payload.doc.id;
+          return { id, ...data}
+        }))
+      )
+    }
 
   ngOnInit(): void {
-    this.retrieveTables();
+    //this.retrieveTables();
   }
 
+  /*
   refreshList(): void {
     this.currentTables = undefined;
     this.currentIndex = -1;
@@ -43,5 +62,5 @@ export class CardsComponent implements OnInit {
   setActiveTutorial(tables: Tables, index: number): void {
     this.currentTables = tables;
     this.currentIndex = index;
-  }
+  }*/
 }

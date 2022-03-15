@@ -5,7 +5,7 @@ import { TablesComponent } from './tables/tables.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CardsComponent } from './cards/cards.component';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 @NgModule({
@@ -17,11 +17,12 @@ import { CardsComponent } from './cards/cards.component';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
     MenuComponent,
     TablesComponent
-  ]
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class WaiterModule { }

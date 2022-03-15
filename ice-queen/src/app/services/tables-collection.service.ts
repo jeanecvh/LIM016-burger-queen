@@ -3,15 +3,21 @@ import {
   AngularFirestore,
   AngularFirestoreCollection,
 } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 import { Tables } from '../models/tables.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TablesCollectionService {
-  private dbPath = '/tables';
+  public dbPath = '/tables';
   tablesRef: AngularFirestoreCollection<Tables>;
-  constructor(private db: AngularFirestore) {
+
+  constructor(
+    public db: AngularFirestore,
+
+    ) {
     this.tablesRef = db.collection(this.dbPath);
   }
   getAll(): AngularFirestoreCollection<Tables> {
@@ -26,4 +32,5 @@ export class TablesCollectionService {
   delete(id: string): Promise<void> {
     return this.tablesRef.doc(id).delete();
   }
+
 }

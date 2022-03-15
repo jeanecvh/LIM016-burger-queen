@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ComponentsModule } from './components/components.module';
 import { LoginModule } from './login/login.module'
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
@@ -14,7 +14,8 @@ import { environment } from 'src/environments/environment';
 import { AuthService } from './services/auth.service';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { HttpClientModule } from '@angular/common/http';
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import {getFirestore, provideFirestore}  from '@angular/fire/firestore';
 import { WaiterModule } from './waiter/waiter.module';
 
 
@@ -35,9 +36,11 @@ import { WaiterModule } from './waiter/waiter.module';
     AngularFireAuthModule,
     SweetAlert2Module.forRoot(),
     HttpClientModule,
-    WaiterModule
+    WaiterModule,
+    provideFirestore(() => getFirestore()),
   ],
   providers: [AuthService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }
