@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Tables } from 'src/app/models/tables.model';
+import { TablesCollectionService } from 'src/app/services/tables-collection.service';
 
 @Component({
   selector: 'app-tables',
@@ -8,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TablesComponent implements OnInit {
 
-  constructor(
+  tables: Tables = new Tables();
+  submitted = false;
 
-  ) { }
+  constructor(
+    private tablesCollectionService: TablesCollectionService) { }
+
+
+    saveTable(): void {
+      this.tablesCollectionService.create(this.tables).then(() => {
+        console.log('Created new item successfully!');
+        this.submitted = true;
+      });
+    }
+
+    addNewTable(): void {
+      this.submitted = false;
+      this.tables = new Tables();
+    }
 
   addCards() {
     const buttonAdd = document.querySelector('#btn-add')

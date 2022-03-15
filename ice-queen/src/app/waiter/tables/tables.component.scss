@@ -17,21 +17,62 @@
 .button-add {
   grid-area: button-add;
   position: relative;
+  background-color: #e6e6e6;
+  width: 24vw;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #C4C4C4;
+  font-size: medium;
+  top: 26%;
+  left: 16%;
+  border-radius: 0.70rem;
+
+  .input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 28vh;
+
+    .input-number{
+      background-color: white;
+      width: 20vw;
+      height: 18vh;
+      display: flex;
+      align-items: center;
+      border-radius: 0.25rem;
+      padding-left: 1vw;
+      border: 1px solid #C4C4C4;
+    }
+  }
+  input{
+    width: 8.5vw;
+    border: none;
+    border-bottom: #797979 2px solid;
+    background: none;
+    overflow: hidden;
+    cursor: pointer;
+    left: 0;
+    outline: none;
+    margin-left: 5%;
+  }
  }
 
  .btn-add {
   background: none;
-  width: 12vw;
-  height: 25vh;
-  position: absolute;
-  top: 25%;
-  right: 50%;
+  background-color: #5e8c2f;
   cursor: pointer;
   border: 1px solid #C4C4C4;
-  border-radius: 0.5rem;
-  color: #C4C4C4;
-  font-size: 4rem;
+  border-radius: 1.2rem;
+  color: #f1f2f3;
+  height: 6vh;
+  width: 14vw;
+  font-size: 1.50vw;
  }
+
 .tables-area { grid-area: tables-area; }
 
 .card-table-container{
@@ -156,4 +197,17 @@
     position: relative;
     margin-left: 3%;
   }
+}
+
+.input-message{
+      background-color: white;
+      width: 20vw;
+      height: 18vh;
+      display: flex;
+      border-radius: 0.25rem;
+      padding-left: 1vw;
+      border: 1px solid #C4C4C4;
+      h4{
+        padding-top: 3vh;
+      }
 }
