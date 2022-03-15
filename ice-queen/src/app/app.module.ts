@@ -6,21 +6,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ComponentsModule } from './components/components.module';
 import { LoginModule } from './login/login.module'
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'src/environments/environment';
 import { AuthService } from './services/auth.service';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { HttpClientModule } from '@angular/common/http';
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-import { FormsModule } from '@angular/forms';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import {getFirestore, provideFirestore}  from '@angular/fire/firestore';
 import { WaiterModule } from './waiter/waiter.module';
-
 
 
 @NgModule({
@@ -37,17 +33,14 @@ import { WaiterModule } from './waiter/waiter.module';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     AngularFirestoreModule,
-    AngularFireAnalyticsModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
     AngularFireAuthModule,
     SweetAlert2Module.forRoot(),
     HttpClientModule,
-    FormsModule,
     WaiterModule,
-
+    provideFirestore(() => getFirestore()),
   ],
   providers: [AuthService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

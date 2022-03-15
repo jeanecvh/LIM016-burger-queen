@@ -12,7 +12,8 @@ describe('DataService', () => {
     TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig), AngularFirestoreModule
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFirestoreModule
       ]
     });
     service = TestBed.inject(DataService);

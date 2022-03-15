@@ -1,94 +1,3 @@
-.tables-container{
-  height: 100vh;
-}
-
-.tables-container
-{  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1.1fr 0.9fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "button-add tables-area tables-area"
-    "button-add tables-area tables-area"
-    "button-add tables-area tables-area";
-}
-
-.button-add {
-  grid-area: button-add;
-  position: relative;
-  background-color: #e6e6e6;
-  width: 24vw;
-  height: 35vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  border: 1px solid #C4C4C4;
-  font-size: medium;
-  top: 26%;
-  left: 16%;
-  border-radius: 0.70rem;
-
-  .input-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 28vh;
-
-    .input-number{
-      background-color: white;
-      width: 20vw;
-      height: 18vh;
-      display: flex;
-      align-items: center;
-      border-radius: 0.25rem;
-      padding-left: 1vw;
-      border: 1px solid #C4C4C4;
-    }
-  }
-  input{
-    width: 8.5vw;
-    border: none;
-    border-bottom: #797979 2px solid;
-    background: none;
-    overflow: hidden;
-    cursor: pointer;
-    left: 0;
-    outline: none;
-    margin-left: 5%;
-  }
- }
-
- .btn-add {
-  background: none;
-  background-color: #5e8c2f;
-  cursor: pointer;
-  border: 1px solid #C4C4C4;
-  border-radius: 1.2rem;
-  color: #f1f2f3;
-  height: 6vh;
-  width: 14vw;
-  font-size: 1.50vw;
- }
-
-.tables-area { grid-area: tables-area; }
-
-
-.input-message{
-      background-color: white;
-      width: 20vw;
-      height: 18vh;
-      display: flex;
-      border-radius: 0.25rem;
-      padding-left: 1vw;
-      border: 1px solid #C4C4C4;
-      h4{
-        padding-top: 3vh;
-      }
-}
-
 .card-table-container{
   width: 19vw;
   border-color: #C4C4C4;
@@ -158,6 +67,34 @@
 .tables-products::-webkit-scrollbar-track {
   border-radius: 10px;
 }
+
+/*
+.table{
+  thead{
+    tr{
+      th{
+        text-align: center;
+      }
+    }
+  }
+}
+
+.table{
+  tbody{
+    tr{
+        border: 1px solid #797979;
+        padding: 0.5rem;
+        margin: 0.2rem;
+        display: flex;
+    }
+  }
+}
+
+
+
+.align-left{
+  text-align: left;
+}*/
 
 .table td, .table th {
     text-align: center;

@@ -38,15 +38,26 @@ export class AuthService {
     //return user !== null && user.emailVerified !== false ? true : false;
   }
 
+  async register (email:string, password:string){
+    try {
+      const result = await this.afauth.createUserWithEmailAndPassword(email,password )
+      return !!result
+    } catch (error) {
+      console.log('error en login: ', error)
+      return false;
+    }
+  }
+
   async login(email: string, password:string){
     try {
-      return await this.afauth.signInWithEmailAndPassword(email,password);
+       const result  = await this.afauth.signInWithEmailAndPassword(email,password)
+       return !!result
     }catch (err) {
-      Swal.fire({
+      await Swal.fire({
         icon: 'error',
         title: 'Usuario o contraseña incorrecta',
       })
-      return null;
+      return false;
     }
   }
 
@@ -54,11 +65,10 @@ export class AuthService {
     return this.afauth.authState
   }
 
-  SignOut() {
-    return this.afauth.signOut().then(() => {
-      localStorage.removeItem('user');
-      this.router.navigate(['home']);
-    });
+  async SignOut() {
+    await this.afauth.signOut();
+    localStorage.removeItem('user');
+    return this.router.navigate(['home']);
   }
 
   /*
@@ -75,14 +85,7 @@ export class AuthService {
       merge: true,
     });
   }
-  async register (email:string, password:string){
-    try {
-      return await this.afauth.createUserWithEmailAndPassword(email,password )
-    } catch (error) {
-      console.log('error en login: ', error)
-      return null;
-    }
-  }
+
 
   async findUser(user:any){
     try {

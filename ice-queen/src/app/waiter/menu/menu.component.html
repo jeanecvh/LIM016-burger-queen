@@ -1,10 +1,12 @@
 <section id="menu-container" class="menu-container">
-    
+
     <div class="category" (click)="categoryListener($event )" >
         <div *ngFor="let list of menu"  class="imgMenu">
-            <button >
+            <button class="button-select" >
+              <div class="div-img">
                 <img [name]="list.category" class="img"  src={{list.image}} alt="">
-            </button>      
+              </div>
+            </button>
         </div>
     </div>
 
@@ -12,13 +14,13 @@
         <ng-template ngFor let-flavor [ngForOf]="category[0] ">
             <div class="menu">
                 <div class="info">
-                    <button class="type"> {{flavor.flavors}} </button>
-                    <h3 class="price"> {{flavor.price}} </h3>
+                    <h3 class="type" style="margin: 0%;"> {{flavor.flavors}} </h3>
+                    <!--- <h3 class="price"> {{flavor.price}} </h3> ---->
                 </div>
 
                 <div class="quantity">
                     <button class="btnQuantity"><span>+</span></button>
-                    <p>1</p>
+                    <p style=" margin-top: 0.75rem; font-size: large;">1</p>
                     <button class="btnQuantity"><span>-</span></button>
                 </div>
             </div>

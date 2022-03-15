@@ -1,12 +1,12 @@
 .menu-container{
-  height: 100vh;
+  height: 120%;
   display: flex;
   flex-direction: row;
 }
 
 @mixin imgButton {
   height: calc(60vh/4);
-} 
+}
 .category {
   display: flex;
   align-items: center;
@@ -18,7 +18,9 @@
 .img {
   height: 100%;
   width: 5rem;
-  @include imgButton()
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  cursor: pointer;
 }
 
 .imgMenu {
@@ -29,7 +31,7 @@
   display: flex;
   flex-direction: column;
   width: 30%;
-  justify-content: center;
+  margin-top: 4%;
 }
 .menu {
   display: flex;
@@ -37,6 +39,8 @@
   align-items: center;
   justify-content: space-around;
   margin-bottom: 1rem;
+  border: 1px solid #8B8B8B;
+  height: 10vh;
 }
 .info {
   display: flex;
@@ -44,8 +48,6 @@
   width: 50%;
 }
 .type {
-  width: 90%;
-  padding: 0;
 }
 .price {
   width: 10%;
@@ -59,5 +61,38 @@
   cursor: pointer;
 }
 .btnQuantity {
-  border-radius: 50%;
+    border-radius: 50%;
+    background-color: transparent;
+    width: 3vw;
+    height: 3vw;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    font-size: 5vh;
+    color: #E8C927;
+    font-weight: bolder;
+    border: 1px solid #E8C927;
+    outline: none;
+    cursor: pointer;
+}
+
+.button-select{
+    width: 14vw;
+    height: 23vh;
+    text-decoration: none;
+    border-radius: 0.6rem;
+    border: 1px solid #8B8B8B;
+    padding-left: 15%;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+}
+
+.div-img{
+    background-color: #607d8b8a;
+    width: 9vw;
+    height: 9vw;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
 }
