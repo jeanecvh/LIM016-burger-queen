@@ -17,7 +17,7 @@ export class DataService {
 
   public getJSON(): Observable<any> {
     return this.http.get("../../assets/data.json");
-    // ../assets/menuData.json
+    
   }
 
 }

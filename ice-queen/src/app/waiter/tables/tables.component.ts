@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Tables } from 'src/app/models/tables.model';
 import { TablesCollectionService } from 'src/app/services/tables-collection.service';
 
+
 @Component({
   selector: 'app-tables',
   templateUrl: './tables.component.html',

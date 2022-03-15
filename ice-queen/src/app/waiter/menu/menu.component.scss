@@ -1,3 +1,63 @@
 .menu-container{
   height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin imgButton {
+  height: calc(60vh/4);
+} 
+.category {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 20%;
+}
+
+.img {
+  height: 100%;
+  width: 5rem;
+  @include imgButton()
+}
+
+.imgMenu {
+  @include imgButton()
+}
+
+.listMenu {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  justify-content: center;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+.info {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+.type {
+  width: 90%;
+  padding: 0;
+}
+.price {
+  width: 10%;
+  text-align: center;
+}
+.quantity {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.btnQuantity {
+  border-radius: 50%;
 }

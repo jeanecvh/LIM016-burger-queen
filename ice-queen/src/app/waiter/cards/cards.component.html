@@ -1,0 +1,49 @@
+<div class="card-table-container">
+  <div class="card-table-tittle">
+    <div class="number-table">
+      <p
+      class="list-group-item"
+        *ngFor="let tables of arrayTables; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTutorial(tables, i)"
+      >{{tables.ntables}}</p>
+    </div>
+    <div>
+      <p>Date</p>
+    </div>
+  </div>
+  <div class="tables-products">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"><span>Item</span></th>
+          <th scope="col"><span>Cantidad</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="align-left">Helado dos sabores</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td class="align-left">Helado dos sabores</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td class="align-left">Helado dos sabores</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td class="align-left">Helado dos sabores</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="button-take-orders">
+    <a href="/menu">
+      <button >Tomar pedido</button>
+    </a>
+    <button>Terminado</button>
+  </div>
+</div>
