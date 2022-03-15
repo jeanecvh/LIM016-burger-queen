@@ -2,7 +2,8 @@
     "menu": [
         {
             "id":"m001",
-            "image": "../../assets/img/frozen-yogurt.png",
+            "image": "../../../assets/img/frozen-yogurt.png",
+            "category": "Helado",
             "Helado":  [
                 {
                     "flavors": "fresa",
@@ -26,14 +27,15 @@
                 },
                 {
                     "flavors": "Coco",
-                    "price": 26
+                    "price": 26.00
                 }
 
             ]
         },
         {
             "id":"m002",
-            "image": "../../assets/img/milshake.png",
+            "image": "../../../assets/img/milshake.png",
+            "category": "Malteadas",
             "Malteadas":  [
                 {
                     "flavors": "Fresa",
@@ -64,18 +66,19 @@
         },
         {
             "id":"m003",
-            "image": "../../assets/img/cafe.png",
+            "image": "../../../assets/img/cafe.png",
+            "category": "Otras Bebidas",
             "Otras Bebidas":  [
                 {
-                    "Type": "Café",
+                    "flavors": "Café",
                     "price": 13.50
                 },
                 {
-                    "Type": "Gaseosa inka personal",
+                    "flavors": "Gaseosa inka personal",
                     "price": 20.00
                 },
                 {
-                    "Type": "Gaseosa cocacola Personal",
+                    "flavors": "Gaseosa cocacola Personal",
                     "price": 13.50
                 }
 
@@ -83,18 +86,19 @@
         },
         {
             "id":"m004",
-            "image": "",
+            "image": "../../../assets/img/sandwich-de-pollo.jpg",
+            "category": "sandwich",
             "sandwich":  [
                 {
-                    "Type": "Pollo",
+                    "flavors": "Pollo",
                     "price": 16.00
                 },
                 {
-                    "Type": "Pavo",
+                    "flavors": "Pavo",
                     "price": 20.00
                 },
                 {
-                    "Type": "Chancho",
+                    "flavors": "Chancho",
                     "price": 16.50
                 }
 

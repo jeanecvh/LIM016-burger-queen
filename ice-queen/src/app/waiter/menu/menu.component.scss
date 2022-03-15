@@ -1,39 +1,63 @@
 .menu-container{
   height: 100vh;
+  display: flex;
+  flex-direction: row;
 }
+
 @mixin imgButton {
   height: calc(60vh/4);
-  width: 20%;
+} 
+.category {
   display: flex;
-  flex-direction: column;
-  padding: 2.5rem;
   align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 20%;
 }
-.imgIce {
-  height: 100%;
-  width: 10rem;
-}
-.imgMalteadas {
+
+.img {
   height: 100%;
   width: 5rem;
-}
-.imgOtrasBebidas {
-  height: 100%;
-  width: 10rem;
-}
-.imgSandwich {
-  height: 100%;
-  width: 10rem;
-}
-.ice {
   @include imgButton()
 }
-.malteadas {
+
+.imgMenu {
   @include imgButton()
 }
-.otrasBebidas {
-  @include imgButton()
+
+.listMenu {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  justify-content: center;
 }
-.sandwich {
-  @include imgButton()
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+.info {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+.type {
+  width: 90%;
+  padding: 0;
+}
+.price {
+  width: 10%;
+  text-align: center;
+}
+.quantity {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.btnQuantity {
+  border-radius: 50%;
 }

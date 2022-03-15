@@ -18,6 +18,9 @@ import { AuthService } from './services/auth.service';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { HttpClientModule } from '@angular/common/http';
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { FormsModule } from '@angular/forms';
+import { WaiterModule } from './waiter/waiter.module';
+
 
 
 @NgModule({
@@ -40,6 +43,8 @@ import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
     AngularFireAuthModule,
     SweetAlert2Module.forRoot(),
     HttpClientModule,
+    FormsModule,
+    WaiterModule,
 
   ],
   providers: [AuthService],

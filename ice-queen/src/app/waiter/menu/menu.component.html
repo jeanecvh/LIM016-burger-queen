@@ -1,16 +1,30 @@
 <section id="menu-container" class="menu-container">
-    <div class="ice">
-        <img class="imgIce" src="../../../assets/img/frozen-yogurt.png" alt="">
+    
+    <div class="category" (click)="categoryListener($event )" >
+        <div *ngFor="let list of menu"  class="imgMenu">
+            <button >
+                <img [name]="list.category" class="img"  src={{list.image}} alt="">
+            </button>      
+        </div>
     </div>
-    <div class="malteadas">
-        <img class="imgMalteadas" src="../../../assets/img/milshake.png" alt="">
+
+    <div class="listMenu">
+        <ng-template ngFor let-flavor [ngForOf]="category[0] ">
+            <div class="menu">
+                <div class="info">
+                    <button class="type"> {{flavor.flavors}} </button>
+                    <h3 class="price"> {{flavor.price}} </h3>
+                </div>
+
+                <div class="quantity">
+                    <button class="btnQuantity"><span>+</span></button>
+                    <p>1</p>
+                    <button class="btnQuantity"><span>-</span></button>
+                </div>
+            </div>
+        </ng-template>
     </div>
-    <div class="otrasBebidas">
-        <img class="imgOtrasBebidas" src="../../../assets/img/cafe.png" alt="">
-    </div>
-    <div class="sandwich">
-        <img class="imgSandwich" src="../../../assets/img/sandwich-de-pollo.jpg" alt="">
-    </div>
-  
+
 </section>
+
 
