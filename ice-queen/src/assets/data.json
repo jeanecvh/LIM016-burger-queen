@@ -2,7 +2,7 @@
     "menu": [
         {
             "id":"m001",
-            "image": "../../../assets/img/frozen-yogurt-2.png",
+            "image": "../../../assets/img/ice-cream-2.png",
             "category": "Helado",
             "Helado":  [
                 {
@@ -34,7 +34,7 @@
         },
         {
             "id":"m002",
-            "image": "../../../assets/img/milshake.png",
+            "image": "../../../assets/img/frape.png",
             "category": "Malteadas",
             "Malteadas":  [
                 {
@@ -66,7 +66,7 @@
         },
         {
             "id":"m003",
-            "image": "../../../assets/img/cafe.png",
+            "image": "../../../assets/img/taza-de-cafe.png",
             "category": "Otras Bebidas",
             "Otras Bebidas":  [
                 {
@@ -86,7 +86,7 @@
         },
         {
             "id":"m004",
-            "image": "../../../assets/img/sandwich-de-pollo.png",
+            "image": "../../../assets/img/hamburguesa.png",
             "category": "sandwich",
             "sandwich":  [
                 {

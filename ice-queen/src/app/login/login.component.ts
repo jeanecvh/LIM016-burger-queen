@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
         const profile = find[0].profile;
         console.log(profile);
         if (profile === 'waiter') {
-          this.router.navigateByUrl('/tables')
+          this.router.navigateByUrl('waiter/menu')
         } else if (profile === "/chef"){
           this.router.navigateByUrl('/menu')
         };

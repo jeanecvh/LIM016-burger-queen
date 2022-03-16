@@ -1,9 +1,12 @@
 import {  ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { Tables } from 'src/app/models/tables.model';
+//import { Tables } from 'src/app/models/tables.model';
 import { TablesCollectionService } from 'src/app/services/tables-collection.service';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+
+export interface Table { tables: number; addTable: boolean; }
+export interface Tables extends Table { id: string }
 
 @Component({
   selector: 'app-cards',
@@ -12,13 +15,12 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
 })
 export class CardsComponent implements OnInit {
 
-  public tablesCollections: AngularFirestoreCollection<Tables>;
-  arrayTables?: Observable<Tables[]>;
-  /*
-  currentTables?: Tables;
-  currentIndex = -1;
-  ntables = "";*/
+  public tablesCollections: AngularFirestoreCollection<Table>;
 
+  arrayTables?: Observable<Table[]> ;
+  currentTables?: Table;
+  currentIndex: Number = -1;
+  ntables: Number = 0;
 
 
   constructor(
@@ -26,10 +28,10 @@ export class CardsComponent implements OnInit {
     //private tablesCollectionService : TablesCollectionService
 
     ) {
-      this.tablesCollections = afs.collection<Tables>('arrayTables');
+      this.tablesCollections = afs.collection<Table>('tables');
       this.arrayTables = this.tablesCollections.snapshotChanges().pipe(
         map(actions => actions.map(a => {
-          const data = a.payload.doc.data() as Tables;
+          const data = a.payload.doc.data() as Table;
           const id = a.payload.doc.id;
           return { id, ...data}
         }))

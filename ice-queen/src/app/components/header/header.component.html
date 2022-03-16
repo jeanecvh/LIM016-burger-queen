@@ -7,9 +7,10 @@
           </div>
           <div class="div-header div-header-right">
             <a href="#" *ngIf="userLogged|async as user" >
-              <img class="logo" src="./../../../assets/img/usuario.png" alt="">
+              <img class="logo" src="./../../../assets/img/usuario-2.png" alt="">
               {{user.email}}
-              <button class="btn-singOut" (click)="authService.SignOut()">salir</button>
+              <h3>|</h3>
+              <button class="btn-singOut" (click)="authService.SignOut()">Cerrar Sesión</button>
             </a>
           </div>
         </mat-toolbar-row>
