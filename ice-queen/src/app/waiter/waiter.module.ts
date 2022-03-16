@@ -17,7 +17,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     TablesComponent,
     CardsComponent,
     WaiterComponent,
-    NavBarComponent
+    NavBarComponent,
   ],
   imports: [
     CommonModule,
