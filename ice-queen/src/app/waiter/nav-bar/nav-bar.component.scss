@@ -1,0 +1,23 @@
+.nav-bar {
+  grid-area: nav-bar;
+  background-color: #6da134;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .div-button-views{
+    background-color: #ffffff;
+    width: 5.5vw;
+    height: 5.5vw;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    margin-top: 40%;
+  }
+  .button-views{
+    width: 4.5vw;
+    padding-top: 0.55rem;
+    padding-left: 0.6rem;
+  }
+ }

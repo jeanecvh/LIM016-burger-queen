@@ -17,22 +17,77 @@
 .button-add {
   grid-area: button-add;
   position: relative;
+  background-color: #e6e6e6;
+  width: 24vw;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #C4C4C4;
+  font-size: medium;
+  top: 26%;
+  left: 16%;
+  border-radius: 0.70rem;
+
+  .input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 28vh;
+
+    .input-number{
+      background-color: white;
+      width: 20vw;
+      height: 18vh;
+      display: flex;
+      align-items: center;
+      border-radius: 0.25rem;
+      padding-left: 1vw;
+      border: 1px solid #C4C4C4;
+    }
+  }
+  input{
+    width: 8.5vw;
+    border: none;
+    border-bottom: #797979 2px solid;
+    background: none;
+    overflow: hidden;
+    cursor: pointer;
+    left: 0;
+    outline: none;
+    margin-left: 5%;
+  }
  }
 
  .btn-add {
   background: none;
-  width: 12vw;
-  height: 25vh;
-  position: absolute;
-  top: 25%;
-  right: 50%;
+  background-color: #5e8c2f;
   cursor: pointer;
   border: 1px solid #C4C4C4;
-  border-radius: 0.5rem;
-  color: #C4C4C4;
-  font-size: 4rem;
+  border-radius: 1.2rem;
+  color: #f1f2f3;
+  height: 6vh;
+  width: 14vw;
+  font-size: 1.50vw;
  }
+
 .tables-area { grid-area: tables-area; }
+
+
+.input-message{
+      background-color: white;
+      width: 20vw;
+      height: 18vh;
+      display: flex;
+      border-radius: 0.25rem;
+      padding-left: 1vw;
+      border: 1px solid #C4C4C4;
+      h4{
+        padding-top: 3vh;
+      }
+}
 
 .card-table-container{
   width: 19vw;
@@ -40,6 +95,7 @@
   background-color: rgba(196, 196, 196, 0.432);
   border: 1px solid #C4C4C4;
   margin: 3rem;
+  width: 25vw;
 }
 
 .card-table-tittle{
@@ -47,14 +103,18 @@
   display: flex;
   border-bottom: 1px solid #C4C4C4;
   justify-content: space-around;
+  padding-top: 3%;
 }
 
 .tables-products{
   color: #C4C4C4;
-  margin: 1rem;
+  margin: 1rem 2rem;
   border: 1px solid #c4c4c493;
   background-color: white;
   border-radius: 0.5rem;
+  overflow-y:scroll;
+  height:40vh;
+  width: 20vw;
 }
 
 .button-take-orders{
@@ -78,4 +138,72 @@
   font-weight: bold;
 }
 
+.tables-products::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.tables-products::-webkit-scrollbar:vertical {
+  width:10px;
+}
+.tables-products::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+  display: none;
+}
+.tables-products::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+.tables-products::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+.tables-products::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
 
+.table td, .table th {
+    text-align: center;
+}
+
+.number-table{
+  display: flex;
+  align-items: center;
+
+  input{
+    width: 3.5vw;
+    border: none;
+    border-bottom: #797979 2px solid;
+    background: none;
+    overflow: hidden;
+    cursor: pointer;
+    top: -12%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    outline: none;
+    font-size: small;
+    position: relative;
+    margin-left: 3%;
+  }
+}
+.nav-bar {
+  grid-area: nav-bar;
+  background-color: #6da134;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .div-button-views{
+    background-color: #ffffff;
+    width: 5.5vw;
+    height: 5.5vw;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    margin-top: 40%;
+  }
+  .button-views{
+    width: 4.5vw;
+    padding-top: 0.55rem;
+    padding-left: 0.6rem;
+  }
+ }

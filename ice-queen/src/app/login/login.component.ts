@@ -29,24 +29,19 @@ export class LoginComponent implements OnInit {
 
   email = new FormControl('', [Validators.required, Validators.email]);
 
-  getErrorMessage() {
-    return this.email.hasError('email') ? 'Correo inválido' : '';
-  }
-
-
-
-  async ingresar(){
+    ingresar(){
     const { email, password } = this.user
-    this.authService.login(email, password).then(res => {
+     this.authService.login(email, password).then(res => {
       console.log('Se registró con google',res)
     })
     this.Profile()
   }
 
   Profile(){
-    this.dataService.getJSON().subscribe(data => {
+    this.dataService.getJSON().subscribe( data => {
       const userLog = this.authService.getUserLogged();
-      userLog.subscribe((res:any) => {
+      console.log('aaaaaa',userLog);
+       userLog.subscribe((res:any) => {
         const userEmail = res.email;
         const usersData = data.users;
         console.log(userEmail , usersData);
@@ -54,7 +49,7 @@ export class LoginComponent implements OnInit {
         const profile = find[0].profile;
         console.log(profile);
         if (profile === 'waiter') {
-          this.router.navigateByUrl('/tables')
+          this.router.navigateByUrl('waiter/menu')
         } else if (profile === "/chef"){
           this.router.navigateByUrl('/menu')
         };
@@ -62,7 +57,12 @@ export class LoginComponent implements OnInit {
       })
     })
   }
+
   /*
+    getErrorMessage() {
+    return this.email.hasError('email') ? 'Correo inválido' : '';
+  }
+
   ingresarConGoogle(){
     const { email, password } = this.user
     this.authService.loginWithGoogle(email, password).then(res => {

@@ -12,16 +12,19 @@
           <h1>Iniciar Sesión</h1>
         </div>
         <div class = "input-email">
-          <mat-form-field appearance="outline" floatLabel="auto">
-            <input matInput placeholder="tucorreo@dominio.com" class ="inputs" [(ngModel)]="user.email">
-          </mat-form-field>
+          <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+            </div>
+            <input placeholder="tucorreo@dominio.com" type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" [(ngModel)]="user.email">
+          </div>
         </div>
         <div class="input-password">
-          <mat-form-field appearance="outline" floatLabel="auto">
-            <input matInput placeholder="contraseña" [type]="hide ? 'password' : 'text'" [(ngModel)]="user.password">
-          </mat-form-field>
+          <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+            </div>
+            <input placeholder="contraseña" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"  [(ngModel)]="user.password">
+          </div>
         </div>
-
         <div class="div-button">
           <button mat-raised-button color="primary" (click)="ingresar()">INGRESAR</button>
         </div>
