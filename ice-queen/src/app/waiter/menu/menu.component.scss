@@ -1,7 +1,48 @@
+.menu-container {
+  display: grid;
+  grid-template-columns: 0.25fr 0.8fr 1.4fr 1.5fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "nav-bar area-buttons-select area-items-deployment area-add-products"
+    "nav-bar area-buttons-select area-items-deployment area-add-products"
+    "nav-bar area-buttons-select area-items-deployment area-add-products";
+}
+
+.nav-bar {
+  grid-area: nav-bar;
+  background-color: #6da134;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .div-button-views{
+    background-color: #ffffff;
+    width: 5.5vw;
+    height: 5.5vw;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    margin-top: 40%;
+  }
+  .button-views{
+    width: 4.5vw;
+    padding-top: 0.55rem;
+    padding-left: 0.6rem;
+  }
+ }
+
+.area-buttons-select { grid-area: area-buttons-select; }
+
+.area-items-deployment { grid-area: area-items-deployment; }
+
+.area-add-products { grid-area: area-add-products; }
+
+
 .menu-container{
   height: 120%;
-  display: flex;
-  flex-direction: row;
 }
 
 @mixin imgButton {
@@ -12,7 +53,6 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  width: 20%;
 }
 
 .img {
@@ -30,8 +70,7 @@
 .listMenu {
   display: flex;
   flex-direction: column;
-  width: 30%;
-  margin-top: 4%;
+  margin-top: 22%;
 }
 .menu {
   display: flex;
@@ -39,16 +78,16 @@
   align-items: center;
   justify-content: space-around;
   margin-bottom: 1rem;
-  border: 1px solid #8B8B8B;
+  border: 1px solid #8b8b8b87;
   height: 10vh;
+  width: 27vw;
 }
 .info {
   display: flex;
   flex-direction: row;
   width: 50%;
 }
-.type {
-}
+
 .price {
   width: 10%;
   text-align: center;
@@ -61,7 +100,6 @@
   cursor: pointer;
 }
 .btnQuantity {
-    border-radius: 50%;
     background-color: transparent;
     width: 3vw;
     height: 3vw;
@@ -77,16 +115,23 @@
 }
 
 .button-select{
-    width: 14vw;
-    height: 23vh;
-    text-decoration: none;
-    border-radius: 0.6rem;
-    border: 1px solid #8B8B8B;
-    padding-left: 15%;
-    cursor: pointer;
-    background-color: transparent;
-    outline: none;
+  width: 12vw;
+  height: 25vh;
+  text-decoration: none;
+  border-radius: 0.6rem;
+  border: 1px solid #8b8b8b87;
+  padding-left: 13%;
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  &:hover{
+    box-shadow: #999;
+    -webkit-box-shadow: 2px 2px 5px #999;
+    -moz-box-shadow: 2px 2px 5px #999;
+    filter: shadow(color=#999999, direction=135, strength=2);
+  }
 }
+
 
 .div-img{
     background-color: #607d8b8a;
@@ -96,3 +141,100 @@
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
+
+.template-order-container{
+  .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10% 10% 0.1% 10%;
+    border: 1px solid #8b8b8b87;
+    div{
+      padding-top: 2%;
+    }
+  }
+  .orders-description{
+    margin: 0px 10% 10% 10%;
+    .units-order{
+      background-color: rgba(196, 196, 196, 0.288);
+      padding-left: 2rem;
+      .valors-units{
+        display: flex;
+        p{
+          margin: 0.9rem 3.2rem 0 1.5rem;
+          color: rgba(138, 136, 136, 0.98);
+        }
+      }
+    }
+  }
+}
+hr{
+  margin-right: 2rem;
+}
+
+.orders-list{
+    height: 41vh;
+    display: flex;
+    flex-direction: column;
+
+    .order-type{
+      display: flex;
+      background-color: #ffffff;
+      margin-left: 0rem;
+      width: 24vw;
+      border-radius: 0.7rem;
+      margin-bottom: 1rem;
+    p{
+      margin: 0.9rem 1.5rem 0 1.2rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+}
+
+.order-total-price{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h3{
+    padding-right: 2.5rem;
+  }
+}
+
+.order-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1px solid #8b8b8b87;
+    height: 13vh;
+    padding: 0.8rem;
+
+    .btn-send-order{
+      width: 12vw;
+      text-decoration: none;
+      border-radius: 0.3rem;
+      border: 1px solid #8b8b8b87;
+      cursor: pointer;
+      background-color: #81BE41;
+      outline: none;
+      color: #ffffff;
+      font-size: medium;
+    }
+
+    .btn-cancel-order{
+      width: 12vw;
+      text-decoration: none;
+      border-radius: 0.3rem;
+      border: 1px solid #8b8b8b87;
+      cursor: pointer;
+      background-color: #F16078;
+      outline: none;
+      color: #ffffff;
+      font-size: medium;
+    }
+}
+
+.icon-trash{
+  padding-top: 4%;
+  font-size: large;
+}
+

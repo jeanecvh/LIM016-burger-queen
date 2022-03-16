@@ -1,0 +1,12 @@
+.container-waiter {
+  display: grid;
+  grid-template-columns: 0.2fr 1.8fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "app-nav-bar router-outlet"
+    "app-nav-bar router-outlet"
+    "app-nav-bar router-outlet";
+}
+.app-nav-bar { grid-area: app-nav-bar; }
+.router-outlet { grid-area: router-outlet; }

@@ -1,6 +1,6 @@
 <section id="menu-container" class="menu-container">
-
-    <div class="category" (click)="categoryListener($event )" >
+    <app-nav-bar class="nav-bar"></app-nav-bar>
+    <div class="category area-buttons-select" (click)="categoryListener($event )" >
         <div *ngFor="let list of menu"  class="imgMenu">
             <button class="button-select" >
               <div class="div-img">
@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    <div class="listMenu">
+    <div class="listMenu area-items-deployment">
         <ng-template ngFor let-flavor [ngForOf]="category[0] ">
             <div class="menu">
                 <div class="info">
@@ -26,7 +26,71 @@
             </div>
         </ng-template>
     </div>
+    <div class="area-add-products">
+      <div class="template-order-container">
+        <div class="header">
+          <div class="table-number">
+            <h3>Mesa</h3>
+          </div>
+          <div class="table-date">
+            <h3>Date</h3>
+          </div>
+        </div>
+        <div class="orders-description">
+          <div class="units-order">
+            <div class="valors-units">
+              <p>cant.</p>
+              <p>Item</p>
+              <p>Precio</p>
+            </div>
+            <hr>
+            <div class="orders-list">
+              <div class="order-type">
+                <p>1</p>
+                <p>|</p>
+                <p>Fresa</p>
+                <p>|</p>
+                <p>S/.10.00</p>
+                <span class="icon-trash">
+                  <i class="fa-solid fa-trash"></i>
+                </span>
+              </div>
+              <div class="order-type">
+                <p>1</p>
+                <p>|</p>
+                <p>Fresa</p>
+                <p>|</p>
+                <p>S/.10.00</p>
+                <span class="icon-trash">
+                  <i class="fa-solid fa-trash"></i>
+                </span>
+              </div>
+              <div class="order-type">
+                <p>1</p>
+                <p>|</p>
+                <p>Fresa</p>
+                <p>|</p>
+                <p>S/.10.00</p>
+                <span class="icon-trash">
+                  <i class="fa-solid fa-trash"></i>
+                </span>
+              </div>
+            </div>
 
+            <div class="order-total-price">
+              <h1>TOTAL: </h1>
+              <h3>S/30.00</h3>
+            </div>
+          </div>
+
+          <div class="order-buttons">
+            <button class="btn-send-order">ENVIAR PEDIDO</button>
+            <button class="btn-cancel-order">CANCELAR PEDIDO</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
 </section>
 
 

@@ -6,18 +6,24 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CardsComponent } from './cards/cards.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { WaiterComponent } from './waiter.component';
+import { WaiterRoutingModule } from './waiter-routing.module';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 @NgModule({
   declarations: [
     MenuComponent,
     TablesComponent,
-    CardsComponent
+    CardsComponent,
+    WaiterComponent,
+    NavBarComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    WaiterRoutingModule,
   ],
   exports: [
     MenuComponent,
