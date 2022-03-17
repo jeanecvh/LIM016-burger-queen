@@ -1,18 +1,18 @@
-.menu-container {
+.list-products-container {
   display: grid;
-  grid-template-columns: 1.3fr 1.1fr;
-  grid-template-rows:  1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "app-list-products app-take-order"
-    "app-list-products app-take-order"
-    "app-list-products app-take-order";
+  grid-template-columns: 0fr 0.6fr 0.8fr 0fr;
+  grid-auto-flow: row;
+  grid-template-areas: ". area-buttons-select area-items-deployment .";
 }
 
-.app-list-products { grid-area: app-list-products; }
-.app-take-order { grid-area: app-take-order; }
+.area-buttons-select {
+  grid-area: area-buttons-select;
 
-/*
+ }
+
+.area-items-deployment { grid-area: area-items-deployment; }
+
+
 @mixin imgButton {
   height: calc(60vh/4);
 }
@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-around;
+  margin-top: 19%;
 }
 
 .img {
@@ -32,7 +32,7 @@
 }
 
 .imgMenu {
-  @include imgButton()
+  height: 30vh;
 }
 
 .listMenu {
@@ -109,5 +109,37 @@
   color: #ffffff;
   font-size: medium;
   height: 6vh;
-}*/
+}
 
+@media only screen and (max-width: 1180px) {
+  .imgMenu {
+    height: 20vh;
+}
+
+.button-select {
+  height: 16vh;
+}
+}
+
+@media only screen and (max-width: 820px) {
+
+  .menu{
+    height: 7vh;
+}
+  .imgMenu{
+    height: 12vh;
+  }
+
+.button-select {
+  height: 10vh;
+}
+
+.quantity {
+  padding-right: 7%;
+}
+
+.btn-add{
+  width: 12vw;
+  height: 4vh;
+}
+}

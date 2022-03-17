@@ -9,6 +9,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { WaiterComponent } from './waiter.component';
 import { WaiterRoutingModule } from './waiter-routing.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { ListProductsComponent } from './menu/list-products/list-products.component';
+import { TakeOrderComponent } from './menu/take-order/take-order.component';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     CardsComponent,
     WaiterComponent,
     NavBarComponent,
+    ListProductsComponent,
+    TakeOrderComponent,
   ],
   imports: [
     CommonModule,

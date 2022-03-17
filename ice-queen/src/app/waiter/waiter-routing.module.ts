@@ -6,8 +6,8 @@ import { MenuComponent } from './menu/menu.component';
 import { TablesComponent } from './tables/tables.component';
 
 const routes: Routes = [
-  { path: 'waiter/tables', component: TablesComponent, canActivate: [AuthGuard] },
-  { path: 'waiter/menu', component: MenuComponent, canActivate: [AuthGuard] },
+  { path: 'tables', component: TablesComponent, canActivate: [AuthGuard] },
+  { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
