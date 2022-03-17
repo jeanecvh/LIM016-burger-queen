@@ -71,6 +71,7 @@ export class LoginComponent implements OnInit {
       console.log('Se registró con google',res)
     })
   }
+  PRuebaaaaaa
   crearuser(){
     console.log(this.user)
     const { email, password } = this.user
