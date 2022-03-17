@@ -47,11 +47,11 @@ export class LoginComponent implements OnInit {
         console.log(userEmail , usersData);
         const find = usersData.filter((x:any) => x.email == userEmail)
         const profile = find[0].profile;
-        console.log(profile);
+        console.log(profile);///
         if (profile === 'waiter') {
           this.router.navigateByUrl('waiter/menu')
-        } else if (profile === "/chef"){
-          this.router.navigateByUrl('/menu')
+        } else if (profile === "chef"){
+          this.router.navigateByUrl('/kitchen/order')
         };
         this.dataService.disparador.next(find[0]);
       })

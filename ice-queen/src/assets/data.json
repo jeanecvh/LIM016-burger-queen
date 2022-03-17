@@ -110,6 +110,11 @@
         "id": "u001",
         "email": "workers@ice-queen.com",
         "profile": "waiter"
+      },
+      {
+        "id": "u001",
+        "email": "chef@ice-queen.com",
+        "profile": "chef"
       }
     ]
 }

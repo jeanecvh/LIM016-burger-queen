@@ -7,7 +7,7 @@ export class Tables {
     SubTotal?: boolean;
     Igv?: boolean;
     Total?: boolean;
-  }
+}
   
 
   
