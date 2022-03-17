@@ -1,5 +1,5 @@
 <section id="tables-container" class="tables-container">
-  <div class="button-add">
+  <!-------><div class="button-add">
     <div class="input-container" *ngIf="!submitted">
       <div class="input-number">
         <label for="">N° de Mesa:</label>
@@ -28,48 +28,7 @@
   <div id="tables-area" class="tables-area">
     <div  class="card-table-container">
       <!--*ngFor="let tables of ngtables | async"--->
-      <div class="card-table-tittle">
-        <div class="number-table">
-          <p>{{tables.ntables}}</p>
-        </div>
-        <div>
-          <p>Date</p>
-        </div>
-      </div>
-      <div class="tables-products">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col"><span>Item</span></th>
-              <th scope="col"><span>Cantidad</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="align-left">Helado dos sabores</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td class="align-left">Helado dos sabores</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td class="align-left">Helado dos sabores</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td class="align-left">Helado dos sabores</td>
-              <td>1</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="button-take-orders">
-        <a href="/menu">
-          <button >Tomar pedido</button>
-        </a>
-        <button>Terminado</button>
-      </div>
+      <app-cards></app-cards>
     </div>
   </div>
 </section>

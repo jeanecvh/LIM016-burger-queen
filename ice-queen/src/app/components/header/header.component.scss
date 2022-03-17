@@ -3,7 +3,7 @@
 }
 
 .header {
-    background: #81BE41;
+    background: #6da134;
 }
 
 img {
@@ -31,7 +31,7 @@ img {
   display: flex;
   align-items: center;
   color: white;
-  font-size: medium;
+  font-size: small;
   text-decoration: none;
 }
 
@@ -40,13 +40,17 @@ img {
   margin-right: 1vw;
 }
 
+.div-header-right h3{
+  margin-left: 0.5rem;
+}
+
 .btn-singOut{
   cursor: pointer;
   background: none;
   text-decoration: none;
   border: none;
   color: white;
-  font-size: medium;
+  font-size: small;
   margin-left: 1vh;
 }
 

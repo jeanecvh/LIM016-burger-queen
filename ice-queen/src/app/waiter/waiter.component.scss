@@ -1,0 +1,11 @@
+.container-waiter {
+  display: grid;
+  grid-template-columns: 0.12fr 1.8fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "nav-bar router-outlet";
+  height: 100vh;
+}
+.nav-bar { grid-area: nav-bar; }
+.router-outlet { grid-area: router-outlet; }
