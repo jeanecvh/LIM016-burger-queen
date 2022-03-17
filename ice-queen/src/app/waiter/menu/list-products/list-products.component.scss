@@ -47,13 +47,14 @@
   justify-content: space-around;
   margin-bottom: 1rem;
   border: 1px solid rgba(140, 140, 140, 0.529);
-  height: 10vh;
+  height: 12vh;
   width: 23vw;
 }
 .info {
   display: flex;
-  flex-direction: row;
   width: 50%;
+  flex-direction: column;
+  padding-top: 5%;
 }
 
 .product-price {

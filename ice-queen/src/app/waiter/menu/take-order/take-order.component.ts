@@ -38,7 +38,7 @@ export class TakeOrderComponent implements OnInit {
   ngOnInit(): void {
     this.SaveOrdersService.disparadorSaveOrder.subscribe(data => {
       this.productList.push({data, amount: 1});
-      console.log('que es data',data)
+      console.log('que es data')
       console.log(this.productList)
       this.totalPrice();
   });
@@ -67,7 +67,7 @@ export class TakeOrderComponent implements OnInit {
     if(this.productList.length === 0){
       this.subTotal = 0;
     } else {
-      this.subTotal = this.productList.map((item)=>item.data.product.price*item.amount)
+      this.subTotal = this.productList.map((item)=>item.data.data.precio*item.amount)
       .reduce((acc,item) => acc += item);
       this.igv = this.subTotal*18/100;
       this.total = this.subTotal + this.igv;
@@ -92,7 +92,7 @@ export class TakeOrderComponent implements OnInit {
     })
 
     this.productList.forEach((product) => {
-      this.nuevo.push(new Product(product.amount, product.data.product.flavors));
+      this.nuevo.push(new Product(product.amount, product.data.data.description));
     })
 
     //fechaCreacion: new Date
