@@ -1,6 +1,6 @@
 <section class="list-products-container">
   <div class="category area-buttons-select" (click)="categoryListener($event )" >
-    <div *ngFor="let list of menu"  class="imgMenu">
+    <div *ngFor="let list of menus"  class="imgMenu">
         <button class="button-select" >
           <div class="div-img">
             <img [name]="list.category" class="img"  src={{list.image}} alt="">
@@ -9,15 +9,15 @@
     </div>
   </div>
 
-  <div class="listMenu area-items-deployment">
-    <ng-template ngFor let-flavor [ngForOf]="category[0] ">
-        <div class="menu">
+  <div class="listMenu area-items-deployment" >
+    <ng-template data=[product] ngFor let-flavor [ngForOf]="category[0]  ">
+        <div class="menu" >
             <div class="info">
                 <h3 class="type" style="margin: 0%;"> {{flavor.flavors}} </h3>
-                <!--- <h3 class="product-price"> {{flavor.price}} </h3> ---->
+                <h3 class="product-price"><b>PRECIO:</b>S/{{flavor.price}} </h3>
             </div>
             <div class="quantity">
-              <button class="btn-add">AÑADIR</button>
+              <button class="btn-add" (click)="addProduct()">AÑADIR</button>
             </div>
         </div>
     </ng-template>

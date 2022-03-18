@@ -38,6 +38,7 @@ export class TakeOrderComponent implements OnInit {
   ngOnInit(): void {
     this.SaveOrdersService.disparadorSaveOrder.subscribe(data => {
       this.productList.push({data, amount: 1});
+      console.log('que es data')
       console.log(this.productList)
       this.totalPrice();
   });
@@ -105,7 +106,8 @@ export class TakeOrderComponent implements OnInit {
     const orderObj =  new Orders(this.clientName, parseInt(this.tableNumber), this.nuevo, this.orderDate);
 
     console.log(orderObj);
-    this.firestore.sendOrdeFireStore(orderObj).then(() => {console.log('Orden registrada con éxito!');
+    this.firestore.sendOrdeFireStore(orderObj).
+    then(() => {console.log('Orden registrada con éxito!');
     //?Mandando con disparador get-otder-status
     this.GetOrderStatusService.disparadorGetOrderStatus.emit({orderSaved: orderObj});
     //Mandar al servicio con un "servicio"

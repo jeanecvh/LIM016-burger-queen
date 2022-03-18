@@ -3,7 +3,7 @@
     <div class="header">
       <div class="table-number">
         <label>Mesa</label>
-        <input type="text"  class="form-control input-number-table" [(ngModel)]="tableNumber">
+        <input type="text"  class="form-control input-number-table" >
       </div>
       <div class="table-date">
         <h4 style="margin: 0%;">Date</h4>
@@ -19,30 +19,30 @@
         </div>
         <hr>
         <div class="orders-list">
-          <div class="order-type">
+          <div class="order-type" *ngFor="let product of productList">
             <div class="btns-add">
-            <button  class="btnQuantity btn-add-item"><span>+</span></button>
-                <h4 style="font-size: large;">1</h4>
-            <button class="btnQuantity btn-rest-item"><span>-</span></button>
+            <button  class="btnQuantity btn-add-item" (click)="changeAmount(base, product)"><span>+</span></button>
+                <h4 style="font-size: large;">{{product.amount}}</h4>
+            <button class="btnQuantity btn-rest-item" (click)="changeAmount(-base, product)"><span>-</span></button>
             </div>
-              <p class="item-type">Gaseosa cocacola Personal</p>
-              <p class="price-soles">S/.10.00</p>
+              <p class="item-type">{{product?.data.product.description}}</p>
+              <p class="price-soles">{{product?.data.product.precio * product.amount}}.00</p>
               <span class="icon-trash div-order-type">
-                <i class="fa-solid fa-trash"></i>
+                <i class="fa-solid fa-trash" (click)="deleteItem(product)"></i>
               </span>
           </div>
         </div>
         <div class="order-total-price">
           <h3>SUB TOTAL: </h3>
-          <h4>S/30.00</h4>
+          <h4>{{subTotal}}</h4>
         </div>
         <div class="order-total-price">
           <h3>IGV: </h3>
-          <h4>S/30.00</h4>
+          <h4>{{igv}}</h4>
         </div>
         <div class="order-total-price">
           <h1>TOTAL: </h1>
-          <h2>S/30.00</h2>
+          <h2>{{total}}</h2>
         </div>
       </div>
 

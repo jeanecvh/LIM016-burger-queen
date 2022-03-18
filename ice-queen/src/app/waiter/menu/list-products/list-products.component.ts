@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../../../services/data.service';
+import { SaveOrdersService } from 'src/app/services/save-orders.service';
 
 @Component({
   selector: 'app-list-products',
@@ -8,30 +9,33 @@ import { DataService } from '../../../services/data.service';
 })
 export class ListProductsComponent implements OnInit {
 
-  public menu: any [] = [];
+  @Input() data!: any;
+
+  public menus: any [] = [];
   public lists: any [] = [];
   public category:  any [] = [];
   public type: String = " "
 
   constructor(
-    private dataService : DataService
+    private dataService : DataService,
+    private saveOrdersService : SaveOrdersService
   ) { }
 
   ngOnInit(): void {
     this.listProducts('')
+
   }
 
   listProducts(select:''){
     this.dataService.getJSON().subscribe(data => {
       const { menu } = data
-      this.menu = menu
+      this.menus = menu
 
       menu.filter((element:any) => {
        return element.category ==select? this.category.push(element[select]):element
 
       });
-
-      console.log(this.category)
+      console.log('que es list',this.category)
     })
   }
 
@@ -45,4 +49,11 @@ export class ListProductsComponent implements OnInit {
    // console.log(dataMenu)
   }
 
+  addProduct(){
+    this.saveOrdersService.disparadorSaveOrder.emit({
+      data:this.data.flavor
+    })
+    console.log('disparador data',this.data)
+  }
+  
 }
