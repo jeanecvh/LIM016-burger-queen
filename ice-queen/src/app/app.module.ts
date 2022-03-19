@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import {getFirestore, provideFirestore}  from '@angular/fire/firestore';
 import { WaiterModule } from './waiter/waiter.module';
+import { KitchenModule } from './kitchen/kitchen.module';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { WaiterModule } from './waiter/waiter.module';
     HttpClientModule,
     WaiterModule,
     provideFirestore(() => getFirestore()),
+    KitchenModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

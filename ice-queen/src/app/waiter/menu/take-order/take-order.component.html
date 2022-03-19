@@ -19,14 +19,14 @@
         </div>
         <hr>
         <div class="orders-list">
-          <div class="order-type" *ngFor="let product of productList">
+          <div class="order-type" *ngFor="let product of productList" >
             <div class="btns-add">
             <button  class="btnQuantity btn-add-item" (click)="changeAmount(base, product)"><span>+</span></button>
                 <h4 style="font-size: large;">{{product.amount}}</h4>
             <button class="btnQuantity btn-rest-item" (click)="changeAmount(-base, product)"><span>-</span></button>
             </div>
-              <p class="item-type">{{product?.data.product.description}}</p>
-              <p class="price-soles">{{product?.data.product.precio * product.amount}}.00</p>
+              <p class="item-type" >{{product?.data.data.flavors}}</p>
+              <p class="price-soles">{{product?.data.data.price * product.amount}}</p>
               <span class="icon-trash div-order-type">
                 <i class="fa-solid fa-trash" (click)="deleteItem(product)"></i>
               </span>

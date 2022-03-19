@@ -15,12 +15,12 @@ export class Orders {
 
 export class Product {
   amount: number;
-  description: string;
+  flavors: string;
 
 
-  constructor(amount: number, description: string) {
+  constructor(amount: number, flavors: string) {
     this.amount = amount;
-    this.description = description;
+    this.flavors = flavors;
 
   }
 

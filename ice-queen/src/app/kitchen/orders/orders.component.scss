@@ -1,0 +1,31 @@
+.input-group-text {
+  width: 2.5rem;
+  justify-content: center;
+}
+
+.form-check-input {
+  display: flex;
+  margin: 5px;
+}
+.contPrincipal {
+  display: flex;
+  margin: 0.6rem;
+  padding: 0.2rem;
+  background: white;
+}
+.form-control {
+  padding: 0;
+}
+.btnEstados {
+  display: flex;
+  justify-content:space-between
+}
+.card {
+  border-color: black;
+  border: outset;
+}
+.detail {
+  background: aliceblue;
+  margin-bottom: 0.9rem;
+}
+

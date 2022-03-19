@@ -21,6 +21,10 @@ const routes: Routes = [
       }
     ]
   },
+  { 
+    path: 'chef', 
+    loadChildren: () => import('./kitchen/kitchen.module').then(m => m.KitchenModule)
+  },
   //{ path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   //{ path: 'waiter/tables', component: TablesComponent, canActivate: [AuthGuard] },
   //{ path: 'waiter/menu', component: MenuComponent, canActivate: [AuthGuard] },

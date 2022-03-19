@@ -9,7 +9,7 @@ import { SaveOrdersService } from 'src/app/services/save-orders.service';
 })
 export class ListProductsComponent implements OnInit {
 
-  @Input() data!: any;
+  @Input() product:  any [] = [];
 
   public menus: any [] = [];
   public lists: any [] = [];
@@ -22,8 +22,8 @@ export class ListProductsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.listProducts('')
-
+    this.listProducts('');
+    console.log('Entrando data:', this.category)
   }
 
   listProducts(select:''){
@@ -35,7 +35,7 @@ export class ListProductsComponent implements OnInit {
        return element.category ==select? this.category.push(element[select]):element
 
       });
-      console.log('que es list',this.category)
+      console.log('CATEGORY',this.category)
     })
   }
 
@@ -49,11 +49,11 @@ export class ListProductsComponent implements OnInit {
    // console.log(dataMenu)
   }
 
-  addProduct(){
+  addProduct(product:any){
     this.saveOrdersService.disparadorSaveOrder.emit({
-      data:this.data.flavor
+      data: product
     })
-    console.log('disparador data',this.data)
+    console.log('1.-disparador data (list products component)', product)
   }
   
 }
