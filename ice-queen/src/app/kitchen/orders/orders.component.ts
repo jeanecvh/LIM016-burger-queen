@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ThemePalette} from '@angular/material/core';
 
 
-
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
@@ -10,6 +9,8 @@ import {ThemePalette} from '@angular/material/core';
 })
 
 export class OrdersComponent implements OnInit {
+
+  orders: any [] =[];
   
 
   constructor() { }
