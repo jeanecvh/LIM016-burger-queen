@@ -1,0 +1,56 @@
+<div class="area-add-products">
+  <div class="template-order-container">
+    <div class="header">
+      <div class="table-number">
+        <label>Mesa</label>
+        <input type="text"  class="form-control input-number-table" >
+      </div>
+      <div class="table-date">
+        <h4 style="margin: 0%;">Date</h4>
+      </div>
+    </div>
+    <div class="orders-description">
+      <div class="units-order">
+        <div class="valors-units">
+          <p class="cant">CANT.</p>
+          <p class="item">ITEM</p>
+          <p class="price">PRECIO</p>
+          <P class="delete">ELIMINAR</P>
+        </div>
+        <hr>
+        <div class="orders-list">
+          <div class="order-type" *ngFor="let product of productList" >
+            <div class="btns-add">
+            <button  class="btnQuantity btn-add-item" (click)="changeAmount(base, product)"><span>+</span></button>
+                <h4 style="font-size: large;">{{product.amount}}</h4>
+            <button class="btnQuantity btn-rest-item" (click)="changeAmount(-base, product)"><span>-</span></button>
+            </div>
+              <p class="item-type" >{{product?.data.data.flavors}}</p>
+              <p class="price-soles">{{product?.data.data.price * product.amount}}</p>
+              <span class="icon-trash div-order-type">
+                <i class="fa-solid fa-trash" (click)="deleteItem(product)"></i>
+              </span>
+          </div>
+        </div>
+        <div class="order-total-price">
+          <h3>SUB TOTAL: </h3>
+          <h4>{{subTotal}}</h4>
+        </div>
+        <div class="order-total-price">
+          <h3>IGV: </h3>
+          <h4>{{igv}}</h4>
+        </div>
+        <div class="order-total-price">
+          <h1>TOTAL: </h1>
+          <h2>{{total}}</h2>
+        </div>
+      </div>
+
+      <div class="order-buttons">
+        <button class="btn-send-order"  type="submit" value="Save" (click)="sendOrder()">ENVIAR PEDIDO</button>
+        <button class="btn-cancel-order"  type="reset" value="Cancel" (click)="cancelOrder()">CANCELAR PEDIDO</button>
+      </div>
+
+    </div>
+  </div>
+</div>

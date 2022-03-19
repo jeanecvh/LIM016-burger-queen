@@ -1,1 +1,47 @@
-<p>orders works!</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-4 card" *ngFor="let detail of orders " id="{{detail.id}}" >
+      <div class="nMesa">
+        <h1 >Mesa #12</h1>
+      </div>
+ 
+      <div class="detail">
+        <div class="contPrincipal" >
+            <div class="order">
+              <h2 class="item">Item</h2>
+              <h2 class="amount">Cant.</h2>
+            </div>
+            <div class="order" *ngFor="let item of detail.data.products">
+              <div class="input-group mb-3 item"  >
+                <div class="input-group-text">
+                  <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                </div>
+                <button type="text"  class="form-control" aria-label="Text input with checkbox" >{{item.flavors}}</button>
+              </div>
+              
+              <div class="input-group mb-3 amount">
+                <button class="form-control" aria-label="Text input with checkbox">{{item.amount}}</button>
+              </div>
+            </div>
+
+        </div>
+        <div class="btnEstados">
+          <button type="button" class="btn btn-warning">En preparación</button>
+          <button type="button" class="btn btn-success">Terminado</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+  <select class="form-select form-select-sm" (change)="orderStatus($event)" >
+    <option value="new" selected>Nuevo</option>
+    <option value="acepted">Aceptado</option>
+    <option value="ready">Listo</option>
+  </select>
+</div>
+
+</div>
+
+

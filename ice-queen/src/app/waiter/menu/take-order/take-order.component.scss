@@ -1,0 +1,199 @@
+.btnQuantity {
+  background-color: transparent;
+  width: 3vw;
+  height: 3vw;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  font-size: 6vh;
+  font-weight: bolder;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-add-item{
+  color: #81BE41;
+  border: 2px solid #81BE41;
+}
+
+.btn-rest-item{
+  color: #F16078;
+  border: 2px solid #F16078;
+}
+
+
+.template-order-container{
+  .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10% 10% 0.1% 0%;
+    border: 1px solid rgba(139, 139, 139, 0.529);
+    div{
+      padding-top: 2%;
+    }
+
+    .table-number{
+      display: flex;
+      align-items: center;
+      .input-number-table{
+        width: 6vw;
+        height: 5vh;
+        /* margin: 0%; */
+        margin-left: 1rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+  }
+  .orders-description{
+    margin: 0px 10% 10% 0%;
+    .units-order{
+      background-color: rgba(196, 196, 196, 0.288);
+      .valors-units{
+        display: flex;
+        justify-content: space-evenly;
+        height: 5vh;
+        padding-top: 1rem;
+        p{
+          color: rgba(138, 136, 136, 0.98);
+        }
+        .cant{
+          width: 4vw;
+        }
+        .item{
+          width: 12vw;
+          align-content: center;
+          padding-left: 4rem;
+        }
+        .price,
+        .delete{
+          width: 1vw;
+        }
+      }
+    }
+  }
+}
+
+.orders-list{
+    height: 41vh;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    .order-type{
+      display: flex;
+      background-color: #ffffff;
+      margin-left: 0rem;
+      width: 39vw;
+      margin-bottom: 1rem;
+      height: 9vh;
+      justify-content: space-around;
+      align-items: center;
+    .btns-add{
+      display: flex;
+      align-items: center;
+      h4{
+        margin: 0rem 0.7rem;
+      }
+    }
+    .item-type{
+      width: 10vw;
+      text-align: center;
+      padding-top: 1rem;
+    }
+    .price-soles{
+      padding-top: 1rem;
+    }
+  }
+}
+
+.order-total-price{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h1,
+  h3{
+    padding-left: 2.5rem;
+  }
+  h2,
+  h4{
+    padding-right: 2.5rem;
+  }
+}
+
+.order-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1px solid rgba(139, 139, 139, 0.529);
+    height: 13vh;
+    padding: 0.8rem;
+
+    .btn-send-order{
+      width: 12vw;
+      text-decoration: none;
+      border-radius: 0.3rem;
+      border: 1px solid rgba(139, 139, 139, 0.529);
+      cursor: pointer;
+      background-color: #81BE41;
+      outline: none;
+      color: #ffffff;
+      font-size: medium;
+    }
+
+    .btn-cancel-order{
+      width: 12vw;
+      text-decoration: none;
+      border-radius: 0.3rem;
+      border: 1px solid rgba(139, 139, 139, 0.529);
+      cursor: pointer;
+      background-color: #F16078;
+      outline: none;
+      color: #ffffff;
+      font-size: medium;
+    }
+}
+
+.icon-trash{
+  font-size: large;
+}
+
+hr {
+  margin-top: 0.5rem;
+
+}
+
+@media only screen and (max-width: 1180px) {
+
+  .orders-description{
+    .units-order{
+      .valors-units{
+        font-size: large;
+        .price,
+        .delete{
+          width: 3vw;
+        }
+      }
+    }
+  }
+      .btnQuantity {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .template-order-container{
+      .header{
+        div {
+          display: flex;
+          align-items: center;
+      }
+      }
+    }
+
+}
+
+@media only screen and (max-width: 820px) {
+
+
+}

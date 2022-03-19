@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from '../app/login/login.component'
 import { ProfileComponent } from '../app/components/profile/profile.component';
@@ -9,18 +9,17 @@ import { WaiterComponent } from './waiter/waiter.component';
 
 
 const routes: Routes = [
-  { 
-    path:'', 
-    redirectTo:'/home', 
-    pathMatch:'full' 
-  },
-  { 
-    path:'home' || '', 
-    component: LoginComponent 
-  },
-  { 
-    path: 'waiter', 
-    loadChildren: () => import('./waiter/waiter.module').then(m => m.WaiterModule)
+  { path:'', redirectTo:'/home', pathMatch:'full' },
+  { path:'home' || '', component: LoginComponent },
+  {
+    path: 'waiter',
+    component: WaiterComponent,
+    children: [
+      {
+        path:'',
+        loadChildren: () => import('./waiter/waiter.module').then(m => m.WaiterModule)
+      }
+    ]
   },
   { 
     path: 'chef', 

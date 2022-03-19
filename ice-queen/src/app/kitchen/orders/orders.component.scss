@@ -1,0 +1,74 @@
+
+.container {
+  display: flex;
+  margin: 0.3rem;
+}
+.order {
+  display: flex;
+  justify-content: space-around;
+}
+.input-group-text {
+  width: 2.5rem;
+  justify-content: center;
+}
+
+.form-check-input {
+  display: flex;
+  margin: 5px;
+}
+.contPrincipal {
+  display: flex;
+  margin: 0.6rem;
+  padding: 0.2rem;
+  background: white;
+  flex-direction: column;
+  border-radius: 8px;
+}
+.form-control {
+  padding: 0;
+}
+.btnEstados {
+  display: flex;
+  justify-content:space-between;
+  width: 100%;
+  padding: 0.3rem;
+}
+.card {
+  border-color: black;
+  border:double;
+  background: rgb(149, 207, 204);
+  padding: 0;
+  margin-bottom: 0.3rem;
+}
+.detail {
+  margin-bottom: 0.9rem;
+}
+
+.item {
+  width: 80%;
+}
+.amount {
+  width: 20%;
+}
+.nMesa{
+  background: white;
+}
+.btn-warning {
+  width: 50%;
+  margin-right: 0.5rem;
+  border-radius: 7px;
+  color: white;
+}
+.btn-success {
+  width: 50%;
+  margin-left: 0.5rem;
+  border-radius: 7px;
+}
+.form-check-input:checked {
+  background-color: rgb(240, 181, 21);
+  border-color: rgb(240, 181, 21);
+}
+.form-check-input {
+  width: 1.1em;
+  height: 1.1em;
+}
