@@ -89,7 +89,7 @@ export class TakeOrderComponent implements OnInit {
     })
     Toast.fire({
       icon: 'success',
-      title: 'Registered Order'
+      title: 'Orden registrada con éxito'
     })
 
     this.productList.forEach((product) => {

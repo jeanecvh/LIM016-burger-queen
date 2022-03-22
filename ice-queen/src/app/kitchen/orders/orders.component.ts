@@ -17,11 +17,11 @@ export class OrdersComponent implements OnInit {
   timeInterval:any;
 
   id:string = '';
-  
+
 
   constructor(
-    private dataService: DataService, 
-    private firestoreService: FirestoreService 
+    private dataService: DataService,
+    private firestoreService: FirestoreService
   ) { }
 
   ngOnInit(): void {
@@ -38,7 +38,18 @@ export class OrdersComponent implements OnInit {
           data: item.payload.doc.data()
         });
       });
-      // console.log(this.orders)
+      this.orders.sort((a:any,b:any) =>{
+        console.log(a.data.date[0].monthDateYear);
+        const newA = a.data.date[0].monthDateYear.split('/').reverse().join('-')
+        const newB = b.data.date[0].monthDateYear.split('/').reverse().join('-');
+        if(newA == newB){
+          return - b.data.date[0].hourMinutes.localeCompare(a.data.date[0].hourMinutes);
+        } else {
+          const time = (a.data.date[0].hourMinutes)
+          console.log(time)
+          return -new Date(newB) - -new Date(newA)
+        }
+      })
     })
   }
 

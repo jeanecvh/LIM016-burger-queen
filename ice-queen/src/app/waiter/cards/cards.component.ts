@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { FirestoreService } from '../../services/firestore.service';
+import { orderBy } from 'firebase/firestore';
 
 export interface Table { tables: number; addTable: boolean; }
 export interface Tables extends Table { id: string }
@@ -56,6 +57,19 @@ export class CardsComponent implements OnInit {
         });
       });
       // console.log(this.orders)
+
+      this.orders.sort((a:any,b:any) =>{
+      console.log(a.data.date[0].monthDateYear);
+      const newA = a.data.date[0].monthDateYear.split('/').reverse().join('-')
+      const newB = b.data.date[0].monthDateYear.split('/').reverse().join('-');
+      if(newA == newB){
+        return - b.data.date[0].hourMinutes.localeCompare(a.data.date[0].hourMinutes);
+      } else {
+        const time = (a.data.date[0].hourMinutes)
+        console.log(time)
+        return -new Date(newB) - -new Date(newA)
+      }
+    })
     })
   }
 
