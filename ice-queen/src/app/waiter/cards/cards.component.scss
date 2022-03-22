@@ -1,5 +1,4 @@
 .card-table-container{
-  width: 19vw;
   border-color: #C4C4C4;
   background-color: rgba(196, 196, 196, 0.432);
   border: 1px solid #C4C4C4;
@@ -24,6 +23,7 @@
   overflow-y:scroll;
   height:40vh;
   width: 20vw;
+  overflow-x: hidden;
 }
 
 .button-take-orders{
@@ -32,19 +32,36 @@
   margin: 1rem;
 }
 
-.button-take-orders button{
-  background: transparent;
-  border-radius: 1.2rem;
-  border: none;
-  height: 6vh;
-  width: 10vw;
-  margin: 2%;
-  cursor: pointer;
-  text-decoration: none;
-  background-color: #E8C927;
-  border: 2px solid #E8C927;
-  color: white;
-  font-weight: bold;
+.button-take-orders{
+
+  .btn-delivered{
+    background: transparent;
+    border-radius: 1.2rem;
+    border: none;
+    height: 6vh;
+    width: 10vw;
+    margin: 2%;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #81BE41;
+    border: 2px solid #81BE41;
+  }
+  .btn-delete{
+    background: transparent;
+    border-radius: 1.2rem;
+    border: none;
+    height: 6vh;
+    width: 10vw;
+    margin: 2%;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #F16078;
+    border: 2px solid #F16078;
+  }
 }
 
 .tables-products::-webkit-scrollbar {
@@ -120,4 +137,5 @@
     position: relative;
     margin-left: 3%;
   }
+
 }

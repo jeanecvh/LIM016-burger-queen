@@ -1,47 +1,53 @@
 
-<div class="container">
-  <div class="row">
-    <div class="col-4 card" *ngFor="let detail of orders " id="{{detail.id}}" >
-      <div class="nMesa">
-        <h1 >Mesa: {{detail.data.table}}</h1>
-      </div>
+<section class="container-orders" style="display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+width: auto;">
 
-      <div class="detail">
-        <div class="contPrincipal" >
-            <div class="order">
-              <h2 class="item">Item</h2>
-              <h2 class="amount">Cant.</h2>
-            </div>
-            <div class="order" *ngFor="let item of detail.data.products">
-              <div class="input-group mb-3 item"  >
-                <div class="input-group-text">
-                  <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
-                </div>
-                <button type="text"  class="form-control" aria-label="Text input with checkbox" >{{item.flavors}}</button>
-              </div>
-
-              <div class="input-group mb-3 amount">
-                <button class="form-control" aria-label="Text input with checkbox">{{item.amount}}</button>
-              </div>
-            </div>
-
-        </div>
-        <div class="btnEstados">
-          <button type="button" class="btn btn-warning">En preparación</button>
-          <button type="button" class="btn btn-success">Terminado</button>
-        </div>
-      </div>
+<div *ngFor="let detail of orders"  id="{{detail.id}}" class="card-table-container" >
+  <div class="card-table-tittle">
+    <div class="number-table" style="
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;">
+      <p>Mesa: {{detail.data.table}}</p>
+      <p>Cliente: {{detail.data.clientName}}</p>
+    </div>
+    <div *ngFor="let datas of detail.data.date">
+      <p>Fecha: {{datas.monthDateYear}}</p>
+      <p>Hora: {{datas.hourMinutes}}</p>
     </div>
   </div>
+  <div class="tables-products">
+    <table class="table" >
+      <thead >
+        <tr>
+          <th scope="col"><span >Item</span></th>
+          <th scope="col"><span>Cantidad</span></th>
+        </tr>
+      </thead>
+      <tbody  *ngFor="let item of detail.data.products">
+        <tr>
+          <td class="align-left">{{item.flavors}}</td>
+          <td>{{item.amount}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="button-take-orders">
+    <button class="btn-take-order">Tomar Pedido</button>
+    <button class="btn-delete">Eliminar Pedido</button>
+  </div>
+</div>
 
-  <div class="card-body">
+  <!--<div class="card-body">
   <select class="form-select form-select-sm" (change)="orderStatus($event)" >
     <option value="new" selected>Nuevo</option>
     <option value="acepted">Aceptado</option>
     <option value="ready">Listo</option>
   </select>
-</div>
+</div>-->
+</section>
 
-</div>
+
 
 

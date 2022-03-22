@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
         if (profile === 'waiter') {
           this.router.navigateByUrl('waiter/menu')
         } else if (profile === "chef"){
-          this.router.navigateByUrl('/kitchen/order')
+          this.router.navigateByUrl('/chef/orders')
         };
         this.dataService.disparador.next(find[0]);
       })

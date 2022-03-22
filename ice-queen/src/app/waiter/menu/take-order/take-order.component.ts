@@ -22,6 +22,7 @@ export class TakeOrderComponent implements OnInit {
   base: number = 1;
   nuevo:Array<Product> = [];
   orderDate:Array<OrderDate> = [];
+  status: string = "pendiente"
 
    //*Payment
    subTotal:number = 0;
@@ -103,7 +104,7 @@ export class TakeOrderComponent implements OnInit {
     //*Capturamos la fecha y hora
     this.orderDate.push(new OrderDate(dateDay, hourDay));
 
-    const orderObj =  new Orders(this.clientName, this.table, this.nuevo, this.orderDate);
+    const orderObj =  new Orders(this.clientName, this.table, this.nuevo, this.orderDate, this.total, this.status);
 
     console.log('what is orderOBJ',orderObj);
     this.firestore.sendOrdeFireStore(orderObj).
@@ -119,6 +120,7 @@ export class TakeOrderComponent implements OnInit {
     this.subTotal = 0;
     this.igv = 0;
     this.total = 0;
+    this.status= "pendiente"
   }
 
   cancelOrder(){
@@ -130,6 +132,7 @@ export class TakeOrderComponent implements OnInit {
       this.subTotal = 0;
       this.igv = 0;
       this. total = 0
+      this.status= "pendiente"
     }
 
     Swal.fire({

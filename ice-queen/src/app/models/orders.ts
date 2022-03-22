@@ -1,14 +1,20 @@
+
+
 export class Orders {
   clientName: string;
   table?: number;
   products: Array<Product>;
   date: Array<OrderDate>;
+  total?: number;
+  status: string;
 
-  constructor(clientName: string, table: number, products: Array<Product>, date: Array<OrderDate>) {
+  constructor(clientName: string, table: number, products: Array<Product>, date: Array<OrderDate>, total: number, status:string) {
     this.clientName= clientName;
     this.table = table;
     this.products = products;
     this.date = date;
+    this.total = total;
+    this.status = status;
   }
 
 }

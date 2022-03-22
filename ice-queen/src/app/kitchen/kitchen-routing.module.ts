@@ -7,7 +7,7 @@ import { CommonModule } from "@angular/common";
 
 const routes: Routes = [
     {
-        path: 'kitchen/order', component: OrdersComponent, canActivate: [AuthGuard]
+        path: 'orders', component: OrdersComponent, canActivate: [AuthGuard]
     }
 ]
 
