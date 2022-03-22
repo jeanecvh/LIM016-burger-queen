@@ -2,11 +2,12 @@
   <div class="template-order-container">
     <div class="header">
       <div class="table-number">
-        <label>Mesa</label>
-        <input type="text"  class="form-control input-number-table" >
+        <label>Mesa: </label>
+        <input type="number"  class="form-control input-number-table" [(ngModel)]="table">
       </div>
-      <div class="table-date">
-        <h4 style="margin: 0%;">Date</h4>
+      <div class="table-number">
+        <label>Cliente: </label>
+        <input type="text"  class="form-control input-table" [(ngModel)]="clientName">
       </div>
     </div>
     <div class="orders-description">
@@ -15,7 +16,6 @@
           <p class="cant">CANT.</p>
           <p class="item">ITEM</p>
           <p class="price">PRECIO</p>
-          <P class="delete">ELIMINAR</P>
         </div>
         <hr>
         <div class="orders-list">
@@ -26,7 +26,7 @@
             <button class="btnQuantity btn-rest-item" (click)="changeAmount(-base, product)"><span>-</span></button>
             </div>
               <p class="item-type" >{{product?.data.data.flavors}}</p>
-              <p class="price-soles">{{product?.data.data.price * product.amount}}</p>
+              <p class="price-soles">S/.{{product?.data.data.price * product.amount}}</p>
               <span class="icon-trash div-order-type">
                 <i class="fa-solid fa-trash" (click)="deleteItem(product)"></i>
               </span>
@@ -34,15 +34,15 @@
         </div>
         <div class="order-total-price">
           <h3>SUB TOTAL: </h3>
-          <h4>{{subTotal}}</h4>
+          <h4>S/.{{subTotal}}</h4>
         </div>
         <div class="order-total-price">
           <h3>IGV: </h3>
-          <h4>{{igv}}</h4>
+          <h4>S/.{{igv}}</h4>
         </div>
         <div class="order-total-price">
           <h1>TOTAL: </h1>
-          <h2>{{total}}</h2>
+          <h2>S/.{{total}}</h2>
         </div>
       </div>
 

@@ -4,6 +4,7 @@ import { TablesCollectionService } from 'src/app/services/tables-collection.serv
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { FirestoreService } from '../../services/firestore.service';
 
 export interface Table { tables: number; addTable: boolean; }
 export interface Tables extends Table { id: string }
@@ -21,14 +22,16 @@ export class CardsComponent implements OnInit {
   currentTables?: Table;
   currentIndex: Number = -1;
   ntables: Number = 0;
+  orders: any [] =[];
 
 
   constructor(
-    public readonly afs: AngularFirestore
+    public readonly afs: AngularFirestore,
+    private firestoreService: FirestoreService
     //private tablesCollectionService : TablesCollectionService
 
     ) {
-      this.tablesCollections = afs.collection<Table>('tables');
+      this.tablesCollections = afs.collection<Table>('orders');
       this.arrayTables = this.tablesCollections.snapshotChanges().pipe(
         map(actions => actions.map(a => {
           const data = a.payload.doc.data() as Table;
@@ -40,6 +43,20 @@ export class CardsComponent implements OnInit {
 
   ngOnInit(): void {
     //this.retrieveTables();
+    this.getOrder();
+  }
+
+  getOrder(){
+    this.firestoreService.getOrder().subscribe(data => {
+      this.orders = [];
+      data.forEach((item) => {
+        this.orders.push({
+          id: item.payload.doc.id,
+          data: item.payload.doc.data()
+        });
+      });
+      // console.log(this.orders)
+    })
   }
 
   /*

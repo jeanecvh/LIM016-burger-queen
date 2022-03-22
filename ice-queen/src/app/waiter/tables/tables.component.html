@@ -1,35 +1,9 @@
 <section id="tables-container" class="tables-container">
-  <!-------><div class="button-add">
-    <div class="input-container" *ngIf="!submitted">
-      <div class="input-number">
-        <label for="">N° de Mesa:</label>
-        <input
-        type = "number"
-        class = "form-add-tables"
-        id = "ntables"
-        required
-        [(ngModel)]="tables.ntables"
-        name="ntables"
-        />
-      </div>
-      <div class="input-button">
-        <button id="btn-add" class="btn-add" (click)="saveTable()">Agregar Mesa</button>
-      </div>
-    </div>
-    <div class="input-container" *ngIf="submitted">
-      <div class="input-message">
-        <h4 >¡Recuerda dar una buena atención!¡Gracias 😊!¿Quieres agregar otra mesa?</h4>
-      </div>
-      <div class="input-button">
-        <button class="btn-add" (click)="addNewTable()">Agregar</button>
-      </div>
-    </div>
-  </div>
   <div id="tables-area" class="tables-area">
-    <div  class="card-table-container">
-      <!--*ngFor="let tables of ngtables | async"--->
-      <app-cards></app-cards>
-    </div>
+    <app-cards style="display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      /* gap: 5px 5px; */
+      width: auto;"></app-cards>
   </div>
 </section>
 

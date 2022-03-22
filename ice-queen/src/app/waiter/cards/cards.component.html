@@ -1,11 +1,11 @@
 
-<div *ngFor="let table of arrayTables | async" class="card-table-container">
+<div *ngFor="let detail of orders " id="{{detail.id}}" class="card-table-container">
   <div class="card-table-tittle">
     <div class="number-table">
-      <p>{{table.tables}}</p>
+      <p>Mesa: {{detail.data.table}}</p>
     </div>
     <div>
-      <p>Date</p>
+      <p>Cliente: {{detail.data.clientName}}</p>
     </div>
   </div>
   <div class="tables-products">
@@ -16,30 +16,16 @@
           <th scope="col"><span>Cantidad</span></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody  *ngFor="let item of detail.data.products">
         <tr>
-          <td class="align-left">Helado dos sabores</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td class="align-left">Helado dos sabores</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td class="align-left">Helado dos sabores</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td class="align-left">Helado dos sabores</td>
-          <td>1</td>
+          <td class="align-left">{{item.flavors}}</td>
+          <td>{{item.amount}}</td>
         </tr>
       </tbody>
     </table>
   </div>
   <div class="button-take-orders">
-    <a href="/menu">
-      <button >Tomar pedido</button>
-    </a>
-    <button>Terminado</button>
+    <button >Entregado</button>
+    <button>Eliminar</button>
   </div>
 </div>

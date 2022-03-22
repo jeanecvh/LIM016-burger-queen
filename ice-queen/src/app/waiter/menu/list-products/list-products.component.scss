@@ -47,7 +47,7 @@
   justify-content: space-around;
   margin-bottom: 1rem;
   border: 1px solid rgba(140, 140, 140, 0.529);
-  height: 12vh;
+  height: 16vh;
   width: 23vw;
 }
 .info {
@@ -112,21 +112,31 @@
   height: 6vh;
 }
 
-@media only screen and (max-width: 1180px) {
+@media only screen and (max-width: 1181px) {
   .imgMenu {
     height: 20vh;
-}
+  }
 
-.button-select {
-  height: 16vh;
-}
+  .button-select {
+    height: 16vh;
+  }
+
 }
 
 @media only screen and (max-width: 820px) {
 
-  .menu{
-    height: 7vh;
+
+.list-products-container {
+    display: grid;
+    grid-template-columns: 0fr 0.4fr 0.8fr 0fr;
+    grid-template-areas: ". area-buttons-select area-items-deployment .";
 }
+
+  .menu{
+    height: 10vh;
+    width: 27vw;
+  }
+
   .imgMenu{
     height: 12vh;
   }
@@ -142,5 +152,9 @@
 .btn-add{
   width: 12vw;
   height: 4vh;
+}
+
+.img {
+  width: 3rem;
 }
 }

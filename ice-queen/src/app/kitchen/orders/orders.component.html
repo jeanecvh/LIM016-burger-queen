@@ -3,9 +3,9 @@
   <div class="row">
     <div class="col-4 card" *ngFor="let detail of orders " id="{{detail.id}}" >
       <div class="nMesa">
-        <h1 >Mesa #12</h1>
+        <h1 >Mesa: {{detail.data.table}}</h1>
       </div>
- 
+
       <div class="detail">
         <div class="contPrincipal" >
             <div class="order">
@@ -19,7 +19,7 @@
                 </div>
                 <button type="text"  class="form-control" aria-label="Text input with checkbox" >{{item.flavors}}</button>
               </div>
-              
+
               <div class="input-group mb-3 amount">
                 <button class="form-control" aria-label="Text input with checkbox">{{item.amount}}</button>
               </div>

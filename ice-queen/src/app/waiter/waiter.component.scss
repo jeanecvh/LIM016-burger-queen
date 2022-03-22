@@ -8,4 +8,29 @@
   height: 100vh;
 }
 .nav-bar { grid-area: nav-bar; }
-.router-outlet { grid-area: router-outlet; }
+.router-outlet {
+  grid-area: router-outlet;
+  overflow-y: scroll;
+  margin-bottom: 7%;
+
+
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #121613;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #6c757d;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4C4C4;
+  border-radius: 10px;
+}
+
+
+

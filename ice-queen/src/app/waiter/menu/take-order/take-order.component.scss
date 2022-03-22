@@ -1,3 +1,9 @@
+.input-table{
+  width: 11vw;
+  height: 5vh;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
 .btnQuantity {
   background-color: transparent;
   width: 3vw;
@@ -68,11 +74,27 @@
         }
         .price,
         .delete{
-          width: 1vw;
+          width: 6vw;
         }
       }
     }
   }
+}
+
+.orders-list::-webkit-scrollbar {
+  width: 10px;
+  background: #121613;
+  border-radius: 5px;
+}
+
+.orders-list::-webkit-scrollbar-track {
+  background: #6c757d;
+  border-radius: 5px;
+}
+
+.orders-list::-webkit-scrollbar-thumb {
+  background: #C4C4C4;
+  border-radius: 5px;
 }
 
 .orders-list{
@@ -81,6 +103,10 @@
     flex-direction: column;
     display: flex;
     align-items: center;
+    overflow-y: scroll;
+    margin-bottom: 2%;
+    overflow-x: hidden;
+
     .order-type{
       display: flex;
       background-color: #ffffff;
@@ -170,10 +196,10 @@ hr {
     .units-order{
       .valors-units{
         font-size: large;
-        .price,
-        .delete{
+        .price{
           width: 3vw;
         }
+
       }
     }
   }
@@ -191,9 +217,21 @@ hr {
       }
     }
 
+    .delete{
+      width: 10vw;
+    }
+
 }
 
 @media only screen and (max-width: 820px) {
+
+  .btnQuantity{
+    font-size: 4vh;
+  }
+
+  .order-buttons{
+    height: 8vh;
+  }
 
 
 }

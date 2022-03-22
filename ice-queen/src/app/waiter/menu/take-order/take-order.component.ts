@@ -17,7 +17,7 @@ export class TakeOrderComponent implements OnInit {
   //*Order
   productList:Array<any> = []
   clientName:string = "";
-  tableNumber:string = "";
+  table:number = 0;
   price:number = 0;
   base: number = 1;
   nuevo:Array<Product> = [];
@@ -67,7 +67,7 @@ export class TakeOrderComponent implements OnInit {
     if(this.productList.length === 0){
       this.subTotal = 0;
     } else {
-      this.subTotal = this.productList.map((item)=>item.data.data.price*item.amount)
+      this.subTotal = this.productList.map((item)=>(item.data.data.price*item.amount) / (1+0.18))
       .reduce((acc,item) => acc += item);
       this.igv = this.subTotal*18/100;
       this.total = this.subTotal + this.igv;
@@ -103,9 +103,9 @@ export class TakeOrderComponent implements OnInit {
     //*Capturamos la fecha y hora
     this.orderDate.push(new OrderDate(dateDay, hourDay));
 
-    const orderObj =  new Orders(this.clientName, parseInt(this.tableNumber), this.nuevo, this.orderDate);
+    const orderObj =  new Orders(this.clientName, this.table, this.nuevo, this.orderDate);
 
-    console.log(orderObj);
+    console.log('what is orderOBJ',orderObj);
     this.firestore.sendOrdeFireStore(orderObj).
     then(() => {console.log('Orden registrada con éxito!');
     //?Mandando con disparador get-otder-status
@@ -114,7 +114,7 @@ export class TakeOrderComponent implements OnInit {
   }).catch(err => {console.log(err)});
 
     this.clientName = "";
-    this.tableNumber = "";
+    this.table = 0;
     this.productList = [];
     this.subTotal = 0;
     this.igv = 0;
@@ -124,7 +124,7 @@ export class TakeOrderComponent implements OnInit {
   cancelOrder(){
     let clean  = () => {
       this.clientName = "";
-      this.tableNumber = "";
+      this.table = 0;
       this.productList = [];
       this.base = 1;
       this.subTotal = 0;
@@ -134,18 +134,18 @@ export class TakeOrderComponent implements OnInit {
 
     Swal.fire({
       icon: 'warning',
-      iconColor:'#94d154',
+      iconColor:'#f16078',
       showCancelButton: true,
-      confirmButtonText: 'Yes',
-      confirmButtonColor:'#94d154',
+      confirmButtonText: 'Sí, eliminar',
+      confirmButtonColor:'#f16078',
+      cancelButtonText: 'No, cancelar',
       focusCancel:true,
-      title: 'Do you want to cancel the order?',
-      text: 'You will lose all registered products!',
+      title: '¿Deseas eliminar la orden?',
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         Swal.fire({
-          text:'Canceled Order!',
+          text:'Orden cancelada!',
           icon: 'success',
           confirmButtonColor:'#94d154'
         }).then(clean)

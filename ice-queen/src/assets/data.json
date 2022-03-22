@@ -6,27 +6,27 @@
             "category": "Helado",
             "Helado":  [
                 {
-                    "flavors": "Fresa",
+                    "flavors": "Helado de Fresa",
                     "price": 13.50
                 },
                 {
-                    "flavors": "Lúcuma",
+                    "flavors": "Helado de Lúcuma",
                     "price": 20.00
                 },
                 {
-                    "flavors": "Maracumango",
+                    "flavors": "Helado de Maracumango",
                     "price": 13.50
                 },
                 {
-                    "flavors": "Frambruesa",
+                    "flavors": "Helado de Frambruesa",
                     "price": 13.50
                 },
                 {
-                    "flavors": "Chocolate",
+                    "flavors": "Helado de Chocolate",
                     "price": 15.00
                 },
                 {
-                    "flavors": "Coco",
+                    "flavors": "Helado de Coco",
                     "price": 26.00
                 }
 
@@ -38,15 +38,15 @@
             "category": "Malteadas",
             "Malteadas":  [
                 {
-                    "flavors": "Fresa",
+                    "flavors": "Frappé de Fresa",
                     "price": 16.00
                 },
                 {
-                    "flavors": "Lúcuma",
+                    "flavors": "Frappé de Lúcuma",
                     "price": 20.00
                 },
                 {
-                    "flavors": "Chocolate",
+                    "flavors": "Frappé de Chocolate",
                     "price": 16.00
                 },
                 {
@@ -58,7 +58,7 @@
                     "price": 16.00
                 },
                 {
-                    "flavors": "Vainilla y cappuccino",
+                    "flavors": "Frappé Vainilla y cappuccino",
                     "price": 20.00
                 }
 
@@ -90,15 +90,15 @@
             "category": "sandwich",
             "sandwich":  [
                 {
-                    "flavors": "Pollo",
+                    "flavors": "Sandwich de Pollo",
                     "price": 16.00
                 },
                 {
-                    "flavors": "Pavo",
+                    "flavors": "Sandwich de Pavo",
                     "price": 20.00
                 },
                 {
-                    "flavors": "Chancho",
+                    "flavors": "Sandwich de Chancho",
                     "price": 16.50
                 }
 
