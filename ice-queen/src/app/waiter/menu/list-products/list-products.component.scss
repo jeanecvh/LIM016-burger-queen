@@ -7,8 +7,7 @@
 
 .area-buttons-select {
   grid-area: area-buttons-select;
-
- }
+}
 
 .area-items-deployment { grid-area: area-items-deployment; }
 
@@ -112,6 +111,11 @@
   height: 6vh;
 }
 
+.titleCategory {
+  width: 23vw;
+  display: flex;
+}
+
 @media only screen and (max-width: 1181px) {
   .imgMenu {
     height: 20vh;
@@ -126,35 +130,35 @@
 @media only screen and (max-width: 820px) {
 
 
-.list-products-container {
-    display: grid;
-    grid-template-columns: 0fr 0.4fr 0.8fr 0fr;
-    grid-template-areas: ". area-buttons-select area-items-deployment .";
-}
+  .list-products-container {
+      display: grid;
+      grid-template-columns: 0fr 0.4fr 0.8fr 0fr;
+      grid-template-areas: ". area-buttons-select area-items-deployment .";
+  }
 
-  .menu{
+    .menu{
+      height: 10vh;
+      width: 27vw;
+    }
+
+    .imgMenu{
+      height: 12vh;
+    }
+
+  .button-select {
     height: 10vh;
-    width: 27vw;
   }
 
-  .imgMenu{
-    height: 12vh;
+  .quantity {
+    padding-right: 7%;
   }
 
-.button-select {
-  height: 10vh;
-}
+  .btn-add{
+    width: 12vw;
+    height: 4vh;
+  }
 
-.quantity {
-  padding-right: 7%;
-}
-
-.btn-add{
-  width: 12vw;
-  height: 4vh;
-}
-
-.img {
-  width: 3rem;
-}
+  .img {
+    width: 3rem;
+  }
 }
