@@ -15,6 +15,7 @@ export class ListProductsComponent implements OnInit {
   public lists: any [] = [];
   public category:  any [] = [];
   public type: String = " "
+  public nameCategory: any = ''
 
   constructor(
     private dataService : DataService,
@@ -41,8 +42,9 @@ export class ListProductsComponent implements OnInit {
 
   categoryListener(e:any){
     this.category=[]
-    const nameCategory = e.target.name
-    this.listProducts(nameCategory)
+    this.nameCategory = e.target.name
+    console.log(this.nameCategory)
+    this.listProducts(this.nameCategory)
   }
 
   listMenu (){

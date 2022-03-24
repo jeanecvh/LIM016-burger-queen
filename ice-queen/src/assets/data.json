@@ -87,8 +87,8 @@
         {
             "id":"m004",
             "image": "../../../assets/img/hamburguesa.png",
-            "category": "sandwich",
-            "sandwich":  [
+            "category": "Sandwich",
+            "Sandwich":  [
                 {
                     "flavors": "Sandwich de Pollo",
                     "price": 16.00
