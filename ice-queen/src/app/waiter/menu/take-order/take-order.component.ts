@@ -70,7 +70,7 @@ export class TakeOrderComponent implements OnInit {
     } else {
       this.subTotal = this.productList.map((item)=>(item.data.data.price*item.amount) / (1+0.18))
       .reduce((acc,item) => acc += item);
-      this.igv = this.subTotal*18/100;
+      this.igv = this.subTotal*(18/100);
       this.total = this.subTotal + this.igv;
     }
   }
