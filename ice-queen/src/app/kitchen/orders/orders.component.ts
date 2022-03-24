@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { FirestoreService } from '../../services/firestore.service';
+import { Orders } from 'src/app/models/orders';
 
 @Component({
   selector: 'app-orders',
@@ -10,12 +11,13 @@ import { FirestoreService } from '../../services/firestore.service';
 
 export class OrdersComponent implements OnInit {
 
+  @Input() detailOrder!: Orders;
+
   orders: any [] =[];
 
   time:any= "00:00:00";
   runningTime:any = 0;
   timeInterval:any;
-
   id:string = '';
 
 
@@ -53,7 +55,7 @@ export class OrdersComponent implements OnInit {
     })
   }
 
-  orderStatus($event:any){
+  orderStatus($event:any,id:any){
     console.log($event.target.value);
     if($event.target.value == 'acepted'){
       this.start()
@@ -93,4 +95,11 @@ export class OrdersComponent implements OnInit {
     clearInterval(this.timeInterval)
   }
 
+ sendToPreparation(id:any) {
+     return this.firestoreService.updateStatusCurrentOrder(id);
+  }
+
+  giveOrderToWaiter(id:any){
+    return this.firestoreService.updateStatusGiveOrder(id);
+  }
 }

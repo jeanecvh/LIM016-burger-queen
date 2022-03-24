@@ -2,13 +2,13 @@
 
 export class Orders {
   clientName: string;
-  table?: number;
+  table: string;
   products: Array<Product>;
   date: Array<OrderDate>;
   total?: number;
   status: string;
 
-  constructor(clientName: string, table: number, products: Array<Product>, date: Array<OrderDate>, total: number, status:string) {
+  constructor(clientName: string, table: string, products: Array<Product>, date: Array<OrderDate>, total: number, status:string) {
     this.clientName= clientName;
     this.table = table;
     this.products = products;
@@ -40,5 +40,10 @@ export class OrderDate {
     this.monthDateYear = monthDateYear;
     this. hourMinutes= hourMinutes;
   }
+
+}
+
+export interface DataUpdate {
+  status: string;
 
 }

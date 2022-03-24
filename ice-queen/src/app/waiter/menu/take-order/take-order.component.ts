@@ -17,7 +17,7 @@ export class TakeOrderComponent implements OnInit {
   //*Order
   productList:Array<any> = []
   clientName:string = "";
-  table:number = 0;
+  table:string = "";
   price:number = 0;
   base: number = 1;
   nuevo:Array<Product> = [];
@@ -115,7 +115,7 @@ export class TakeOrderComponent implements OnInit {
   }).catch(err => {console.log(err)});
 
     this.clientName = "";
-    this.table = 0;
+    this.table = "";
     this.productList = [];
     this.subTotal = 0;
     this.igv = 0;
@@ -126,7 +126,7 @@ export class TakeOrderComponent implements OnInit {
   cancelOrder(){
     let clean  = () => {
       this.clientName = "";
-      this.table = 0;
+      this.table = "";
       this.productList = [];
       this.base = 1;
       this.subTotal = 0;

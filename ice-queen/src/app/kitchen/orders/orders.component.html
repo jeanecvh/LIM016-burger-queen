@@ -33,9 +33,10 @@ width: auto;">
       </tbody>
     </table>
   </div>
+  <p style="text-align: center;">Estado: {{detail.data.status}}</p>
   <div class="button-take-orders">
-    <button class="btn-take-order">Tomar Pedido</button>
-    <button class="btn-finish-order">Entregar Pedido</button>
+    <button class="btn-take-order" (click)="sendToPreparation(detail.id)">Tomar Pedido</button>
+    <button class="btn-finish-order" (click)="giveOrderToWaiter(detail.id)">Entregar Pedido</button>
   </div>
 </div>
 
