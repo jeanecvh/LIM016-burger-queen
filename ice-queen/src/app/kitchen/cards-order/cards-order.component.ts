@@ -36,36 +36,39 @@ export class CardsOrderComponent implements OnInit {
 
   }
 
-
-  orderStatus($event:any,id:any){
+  orderStatus($event:any){
     console.log('Que es jesto',$event.target.value);
     console.log('target name', $event.target.name)
-    console.log('id of card',id);
-    if($event.target.value == 'accepted' && $event.target.name == id){
+    
+    if($event.target.value == 'accepted'){
+      console.log('accepted')
+      this.startTime = Date.now();
       this.start()
-      console.log('acepted')
-      this.orderStatusChange = "Acepted"
+      //this.firestoreService.updateStatus($event.target.value, this.startTime)
+      this.orderStatusChange = "accepted"
+      //* Guardar startTime en FS
 
-      this.firestoreService.updateStatusCurrentOrder(id)
+      this.firestoreService.updateStatusCurrentOrder($event.target.name)
 
     } else if ($event.target.value == 'ready'){
-      
+      console.log('se pausa el cronómetro');
+      this.pause()
+      //this.firestoreService.updateStatus($event.target.value, this.startTime)
       this.orderStatusChange = "Ready to delivere."
       
-      this.giveOrderToWaiter(id)
+      
+      this.giveOrderToWaiter($event.target.name)
       //? Guardar date en documento de la colección
-    } else {
-      console.log('reinicia el cronómetro');
-      this.time = "00:00:00"
-    }
+    } 
   }
 
   start(){
     //const btn = document.querySelectorAll('select');
     //console.log(btn)
-    this.id = ""
-    let startTime = Date.now();
-    console.log('Start Time',startTime);
+    const btn = document.querySelectorAll('select');
+    console.log(btn)
+    console.log(this.startTime);
+ 
     this.timeInterval = setInterval(() => {
       this.runningTime = Date.now() - this.startTime;
       this.time = this.calculateTime(this.runningTime);
@@ -82,7 +85,7 @@ export class CardsOrderComponent implements OnInit {
     return `${displayMinutes}:${displaySeconds}`
   }
 
-  pause(id:any){
+  pause(){
     clearInterval(this.timeInterval)
   }
 
