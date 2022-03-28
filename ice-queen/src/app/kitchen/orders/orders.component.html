@@ -2,7 +2,7 @@
 <section class="container-orders" style="display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 width: auto;">
-<app-cards-order [detail]="detail" *ngFor="let detail of allOrders"  id="{{detail.id}}"></app-cards-order>
+<app-cards-order [detail]="detail" *ngFor="let detail of (allOrders | filterStatus:'pendiente':'preparacion')"  id="{{detail.id}}"></app-cards-order>
 </section>
 
 

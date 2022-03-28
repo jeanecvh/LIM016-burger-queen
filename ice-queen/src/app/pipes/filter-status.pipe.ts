@@ -9,10 +9,10 @@ import  { GetOrderStatusService } from '../services/get-order-status.service'
 })
 export class FilterStatusPipe implements PipeTransform {
 
-  transform(values: DataUpdate[], args: string): DataUpdate[] {
+  transform(values: DataUpdate[], args: string, args2: string): DataUpdate[] {
     let result: DataUpdate [] = [];
-    if (args != '') {
-      result = values.filter((e: DataUpdate) => e.data.status == args)
+    if (args != '' || args2 != '') {
+      result = values.filter((e: DataUpdate) => e.data.status == args || e.data.status == args2)
     }
     return result
   }

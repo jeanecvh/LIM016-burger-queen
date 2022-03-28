@@ -29,7 +29,7 @@ export class FirestoreService {
    //actualiza estado pedido actual
    public updateStatusCurrentOrder(id: any) {
     try{
-      this.firestore.collection('orders').doc(id).update({status:"En preparación"});
+      this.firestore.collection('orders').doc(id).update({status:"preparacion"});
     } catch(err){
       console.log(err)
     }
@@ -38,7 +38,7 @@ export class FirestoreService {
 
   public updateStatusGiveOrder(id: any) {
     try{
-      this.firestore.collection('orders').doc(id).update({status:"Listo para entregar"});
+      this.firestore.collection('orders').doc(id).update({status:"listo"});
     } catch(err){
       console.log(err)
     }
