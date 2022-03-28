@@ -7,6 +7,10 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { KitchenComponent } from './kitchen.component';
+import { SendOrdersComponent } from './send-orders/send-orders.component';
+import { FilterStatusPipe } from '../pipes/filter-status.pipe';
+import { CardsOrderComponent } from './cards-order/cards-order.component';
+
 
 
 
@@ -15,6 +19,9 @@ import { KitchenComponent } from './kitchen.component';
     OrdersComponent,
     NavBarChefComponent,
     KitchenComponent,
+    SendOrdersComponent,
+    FilterStatusPipe,
+    CardsOrderComponent
   ],
   imports: [
     CommonModule,

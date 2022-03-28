@@ -56,7 +56,7 @@ export class CardsComponent implements OnInit {
           data: item.payload.doc.data()
         });
       });
-      // console.log(this.orders)
+      console.log(this.orders)
 
       this.orders.sort((a:any,b:any) =>{
       console.log(a.data.date[0].monthDateYear);
@@ -72,28 +72,4 @@ export class CardsComponent implements OnInit {
     })
     })
   }
-
-  /*
-  refreshList(): void {
-    this.currentTables = undefined;
-    this.currentIndex = -1;
-    this.retrieveTables();
-  }
-
-  retrieveTutorials(): void {
-    this.tablesCollectionService.getAll().snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c =>
-          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
-        )
-      )
-    ).subscribe(data => {
-      this.arrayTables = data;
-    });
-  }
-
-  setActiveTutorial(tables: Tables, index: number): void {
-    this.currentTables = tables;
-    this.currentIndex = index;
-  }*/
 }

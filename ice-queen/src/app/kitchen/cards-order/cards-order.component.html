@@ -1,0 +1,37 @@
+<div class="card-table-container" >
+  <div class="card-table-tittle">
+    <div class="number-table" style="
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;">
+      <p>Mesa: {{detail.data.table}}</p>
+      <p>Cliente: {{detail.data.clientName}}</p>
+    </div>
+    <div *ngFor="let datas of detail.data.date">
+      <p>Fecha: {{datas.monthDateYear}}</p>
+      <p>Hora: {{datas.hourMinutes}}</p>
+    </div>
+  </div>
+  <div class="tables-products">
+    <table class="table" >
+      <thead >
+        <tr>
+          <th scope="col"><span >Item</span></th>
+          <th scope="col"><span>Cantidad</span></th>
+        </tr>
+      </thead>
+      <tbody  *ngFor="let item of detail.data.products">
+        <tr>
+          <td class="align-left">{{item.flavors}}</td>
+          <td>{{item.amount}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="text-align: center;">Estado: {{detail.data.status}}</p>
+  <p style="text-align: center;">Time {{time}}</p>
+  <div class="button-take-orders">
+    <button class="btn-take-order" value="accepted" name="{{detail.id}}" (click)="orderStatus($event,detail.id)">Tomar Pedido</button>
+    <button class="btn-finish-order" value="ready" name="{{detail.id}}"  (click)="orderStatus($event,detail.id)">Entregar Pedido</button>
+  </div>
+</div>

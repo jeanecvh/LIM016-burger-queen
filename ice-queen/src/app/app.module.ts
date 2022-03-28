@@ -20,6 +20,7 @@ import { WaiterModule } from './waiter/waiter.module';
 import { KitchenModule } from './kitchen/kitchen.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, DocumentReference } from '@angular/fire/compat/firestore';
-import { Orders, DataUpdate } from '../models/orders';
+import { doc, getDocs } from 'firebase/firestore';
+import { Orders } from '../models/orders';
 
 @Injectable({
   providedIn: 'root'
@@ -44,5 +45,12 @@ export class FirestoreService {
     console.log(id)
   }
 
+/*   public getOrdersByStatus() {
+     const q =  this.firestore.collection('orders', (ref) => ref.where('status', '==', 'En preparación' && 'Pendiente')).valueChanges();
+      const querySnapshot =  getDocs(q);
+      querySnapshot.forEach((doc:any) => {
+      console.log(doc.id, '=>', doc.data)
+    })
+  }*/
 
 }
