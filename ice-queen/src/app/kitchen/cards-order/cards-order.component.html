@@ -7,9 +7,9 @@
       <p>Mesa: {{detail.data.table}}</p>
       <p>Cliente: {{detail.data.clientName}}</p>
     </div>
-    <div *ngFor="let datas of detail.data.date">
-      <p>Fecha: {{datas.monthDateYear}}</p>
-      <p>Hora: {{datas.hourMinutes}}</p>
+    <div >
+      <p>Fecha: {{detail.data.monthDateYear}}</p>
+      <p>Hora: {{detail.data.hourMinutes}}</p>
     </div>
   </div>
   <div class="tables-products">
@@ -29,9 +29,21 @@
     </table>
   </div>
   <p style="text-align: center;">Estado: {{detail.data.status}}</p>
-  <p style="text-align: center;">Time {{time}}</p>
-  <div class="button-take-orders">
-    <button class="btn-take-order" value="accepted" name="{{detail.id}}" (click)="orderStatus($event,detail.id)">Tomar Pedido</button>
-    <button class="btn-finish-order" value="ready" name="{{detail.id}}"  (click)="orderStatus($event,detail.id)">Entregar Pedido</button>
+  
+  <div class="button-take-orders" >
+    <ul>
+      <li>Time: {{detail.data.status == 'Ready'? detail.data.readyTime : time}} </li>
+    </ul>
+    <select class="form-select form-select-sm"  name="{{detail.id}}" (change)="orderStatus($event)" >
+      <option value="new" selected>Nuevo</option>
+      <option value="accepted">Aceptado</option>
+      <option value="ready">Listo</option>
+    </select>
+    
   </div>
+  <!--
+    <div class="button-take-orders">
+      <button class="btn-take-order" value="accepted" name="{{detail.id}}" (click)="orderStatus($event)">Tomar Pedido</button>
+      <button class="btn-finish-order" value="ready" name="{{detail.id}}"  (click)="orderStatus($event)">Entregar Pedido</button>
+    </div>-->
 </div>
