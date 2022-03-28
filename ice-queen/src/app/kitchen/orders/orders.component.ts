@@ -13,10 +13,10 @@ export class OrdersComponent implements OnInit {
   @Input() order!: any;
 
   allOrders: any [] =[];
-  time:any= "00:00:00";
-  runningTime:any = 0;
-  timeInterval:any;
-  id:string = '';
+  //time:any= "00:00:00";
+  //runningTime:any = 0;
+  //timeInterval:any;
+  //id:string = '';
 
 
   constructor(
@@ -39,6 +39,7 @@ export class OrdersComponent implements OnInit {
         //console.log('que es item',item)
         //console.log('all orders', this.allOrders)
       });
+      
       this.allOrders.sort((a:any,b:any) =>{
         //console.log(a.data.date[0].monthDateYear);
         const newA = a.data.date[0].monthDateYear.split('/').reverse().join('-')

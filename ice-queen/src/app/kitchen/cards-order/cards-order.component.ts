@@ -37,34 +37,33 @@ export class CardsOrderComponent implements OnInit {
   }
 
   orderStatus($event:any){
-    console.log('Que es jesto',$event.target.value);
+    console.log('value',$event.target.value);
     console.log('target name', $event.target.name)
     
     if($event.target.value == 'accepted'){
-      console.log('accepted')
+      console.log('value',$event.target.value);
       this.startTime = Date.now();
       this.start()
-      //this.firestoreService.updateStatus($event.target.value, this.startTime)
+      console.log(this.time)
+    
       this.orderStatusChange = "accepted"
-      //* Guardar startTime en FS
-
-      this.firestoreService.updateStatusCurrentOrder($event.target.name)
+  
+      this.firestoreService.updateStatus(this.detail.id,"preparacion", this.startTime )
 
     } else if ($event.target.value == 'ready'){
       console.log('se pausa el cronómetro');
       this.pause()
-      //this.firestoreService.updateStatus($event.target.value, this.startTime)
+      console.log(this.time)
+    
       this.orderStatusChange = "Ready to delivere."
       
-      
-      this.giveOrderToWaiter($event.target.name)
+      this.firestoreService.updateStatus(this.detail.id,"listo", this.startTime )
       //? Guardar date en documento de la colección
     } 
   }
 
   start(){
-    //const btn = document.querySelectorAll('select');
-    //console.log(btn)
+   
     const btn = document.querySelectorAll('select');
     console.log(btn)
     console.log(this.startTime);
@@ -73,14 +72,17 @@ export class CardsOrderComponent implements OnInit {
       this.runningTime = Date.now() - this.startTime;
       this.time = this.calculateTime(this.runningTime);
     }, 1000)
+    console.log(this.time)
   }
 
   calculateTime(x:any){
+    
     const totalSeconds = Math.floor(x / 1000);
     const totalMinutes = Math.floor(totalSeconds / 60);
 
     const displaySeconds = (totalSeconds % 60).toString().padStart(2, "0");
     const displayMinutes = totalMinutes.toString().padStart(2, "0")
+    console.log(this.time)
 
     return `${displayMinutes}:${displaySeconds}`
   }

@@ -32,7 +32,7 @@
   
   <div class="button-take-orders" >
     <ul>
-      <li>Tiempo: {{time }} </li>
+      <li>Time: {{detail.data.status == 'Ready'? detail.data.readyTime : time}} </li>
     </ul>
     <select class="form-select form-select-sm"  name="{{detail.id}}" (change)="orderStatus($event)" >
       <option value="new" selected>Nuevo</option>

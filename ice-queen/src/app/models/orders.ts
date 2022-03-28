@@ -7,14 +7,18 @@ export class Orders {
   date: Array<OrderDate>;
   total?: number;
   status: string;
+  startTime?: number;
+  readyTime?: string; 
 
-  constructor(clientName: string, table: string, products: Array<Product>, date: Array<OrderDate>, total: number, status:string) {
+  constructor(clientName: string, table: string, products: Array<Product>, date: Array<OrderDate>, total: number, status:string, startTime: number, readyTime: string) {
     this.clientName= clientName;
     this.table = table;
     this.products = products;
     this.date = date;
     this.total = total;
     this.status = status;
+    this.startTime = startTime
+    this.readyTime = readyTime
   }
 }
 

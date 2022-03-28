@@ -14,16 +14,26 @@ export class FirestoreService {
 
   sendOrdeFireStore(order: Orders): Promise<DocumentReference<any>> {
     return this.firestore.collection('orders').add(
-      {clientName: order.clientName, table: order.table, total: order.total, status: order.status, products: JSON.parse(JSON.stringify(order.products)),
-      date: JSON.parse(JSON.stringify(order.date))});
+      {
+        clientName: order.clientName, 
+        table: order.table, 
+        total: order.total, 
+        status: order.status, 
+        products: JSON.parse(JSON.stringify(order.products)),
+        date: JSON.parse(JSON.stringify(order.date)),
+        startTime: order.readyTime,       
+      });
   }
 
   getOrder() {
     return this.firestore.collection('orders').snapshotChanges();
   }
 
-  updateStatus(id:string){
-    return this.firestore.collection('orders').doc(id).update({status:"listo"})
+  updateStatus(id:string, status:string, startTime: number ){
+    return this.firestore.collection('orders').doc(id).update({ 
+      status: status, 
+      startTime : startTime 
+    }) 
   }
 
    //actualiza estado pedido actual
