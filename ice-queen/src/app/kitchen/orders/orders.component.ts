@@ -36,18 +36,18 @@ export class OrdersComponent implements OnInit {
           id: item.payload.doc.id,
           data: item.payload.doc.data()
         });
-        console.log('que es item',item)
-        console.log('all orders', this.allOrders)
+        //console.log('que es item',item)
+        //console.log('all orders', this.allOrders)
       });
       this.allOrders.sort((a:any,b:any) =>{
-        console.log(a.data.date[0].monthDateYear);
+        //console.log(a.data.date[0].monthDateYear);
         const newA = a.data.date[0].monthDateYear.split('/').reverse().join('-')
         const newB = b.data.date[0].monthDateYear.split('/').reverse().join('-');
         if(newA == newB){
           return - b.data.date[0].hourMinutes.localeCompare(a.data.date[0].hourMinutes);
         } else {
           const time = (a.data.date[0].hourMinutes)
-          console.log(time)
+          //console.log(time)
           return -new Date(newB) - -new Date(newA)
         }
       })

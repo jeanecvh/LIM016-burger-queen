@@ -12,10 +12,21 @@ export class CardsOrderComponent implements OnInit {
 
 
   time:any= "00:00:00";
+
+  orders: any [] =[];
+
   runningTime:any = 0;
   timeInterval:any;
   id:string = '';
 
+  startTime:any;
+  
+  orderStatusChange:string = "Nuevo";
+
+  _id:string = '';
+  name:string = '';
+
+  today: any = new Date()
 
   constructor(
     private firestoreService: FirestoreService
@@ -31,11 +42,16 @@ export class CardsOrderComponent implements OnInit {
     console.log('target name', $event.target.name)
     console.log('id of card',id);
     if($event.target.value == 'accepted' && $event.target.name == id){
-      this.start(id)
+      this.start()
+      console.log('acepted')
+      this.orderStatusChange = "Acepted"
+
       this.firestoreService.updateStatusCurrentOrder(id)
+
     } else if ($event.target.value == 'ready'){
-      console.log('se pausa el cronómetro');
-      this.pause(id)
+      
+      this.orderStatusChange = "Ready to delivere."
+      
       this.giveOrderToWaiter(id)
       //? Guardar date en documento de la colección
     } else {
@@ -44,14 +60,14 @@ export class CardsOrderComponent implements OnInit {
     }
   }
 
-  start(id:any){
+  start(){
     //const btn = document.querySelectorAll('select');
     //console.log(btn)
     this.id = ""
     let startTime = Date.now();
     console.log('Start Time',startTime);
     this.timeInterval = setInterval(() => {
-      this.runningTime = Date.now() - startTime;
+      this.runningTime = Date.now() - this.startTime;
       this.time = this.calculateTime(this.runningTime);
     }, 1000)
   }
@@ -59,13 +75,11 @@ export class CardsOrderComponent implements OnInit {
   calculateTime(x:any){
     const totalSeconds = Math.floor(x / 1000);
     const totalMinutes = Math.floor(totalSeconds / 60);
-    const totalHours = Math.floor(totalMinutes / 60);
 
     const displaySeconds = (totalSeconds % 60).toString().padStart(2, "0");
     const displayMinutes = totalMinutes.toString().padStart(2, "0")
-    const displayHours = totalHours.toString().padStart(2, "0");
 
-    return `${displayHours}:${displayMinutes}:${displaySeconds}`
+    return `${displayMinutes}:${displaySeconds}`
   }
 
   pause(id:any){
