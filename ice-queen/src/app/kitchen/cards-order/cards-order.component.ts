@@ -20,7 +20,6 @@ export class CardsOrderComponent implements OnInit {
   orderStatusChange:string = "pendiente";
   _id:string = '';
   name:string = '';
-
   today: any = new Date()
 
   constructor(
@@ -28,25 +27,34 @@ export class CardsOrderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    setTimeout(() => {this.showTime()}, 1);
+  }
 
+  showTime() {
+    const button = document.getElementById(this.detail.id);
+    console.log("select", button);
+    let selectValue = (<HTMLInputElement>document.getElementById(this.detail.id)).value;
+    if (button !== null) {
+      if (selectValue == "accepted") {
+        this.startTime = this.detail.data.startTime;
+        this.start(this.startTime)
+      } else if (selectValue == "ready") {
+        console.log("este select está listo");
+        console.log(this.detail.data.readyTime);
+        this.time = this.detail.data.readyTime;
+      }
+    }
   }
 
   orderStatus($event:any){
-    console.log('value',$event.target.value);
-    console.log('target name', $event.target.name)
-
     if($event.target.value == 'accepted'){
       this.startTime = Date.now();
-      this.start()
       console.log('START',this.time)
-      //this.orderStatusChange = "accepted"
       this.sendToPreparation($event.target.name)
       this.firestoreService.updateStatus(this.detail.id, this.startTime)
-
     } else if ($event.target.value == 'ready'){
       console.log('se pausa el cronómetro');
       this.pause()
-      //this.orderStatusChange = "ready"
       this.firestoreService.updateStatus(this.detail.id,this.startTime)
       this.firestoreService.sendReadyTime(this.detail.id, this.time);
       this.giveOrderToWaiter($event.target.name)
@@ -55,9 +63,9 @@ export class CardsOrderComponent implements OnInit {
     }
   }
 
-  start(){
+  start(date:any){
     this.timeInterval = setInterval(() => {
-      this.runningTime = Date.now() - this.startTime;
+      this.runningTime = Date.now() - date;
       this.time = this.calculateTime(this.runningTime);
     }, 1000)
     console.log('FUNCIÓN START',this.time)
