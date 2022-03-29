@@ -53,7 +53,6 @@ export class FirestoreService {
     } catch(err){
       console.log(err)
     }
-    console.log(id)
   }
 
   public updateStatusGiveOrder(id: any) {
@@ -62,15 +61,17 @@ export class FirestoreService {
     } catch(err){
       console.log(err)
     }
-    console.log(id)
   }
 
-/*   public getOrdersByStatus() {
-     const q =  this.firestore.collection('orders', (ref) => ref.where('status', '==', 'En preparación' && 'Pendiente')).valueChanges();
-      const querySnapshot =  getDocs(q);
-      querySnapshot.forEach((doc:any) => {
-      console.log(doc.id, '=>', doc.data)
-    })
-  }*/
+  public updateStatusDeliveryOrder(id: any) {
+    try{
+      this.firestore.collection('orders').doc(id).update({status:"entregado"});
+    } catch(err){
+      console.log(err)
+    }
+  }
 
+  public delete(id: string) {
+     this.firestore.collection('orders').doc(id).delete();
+  }
 }

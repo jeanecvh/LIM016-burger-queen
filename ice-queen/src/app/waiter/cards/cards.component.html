@@ -39,7 +39,7 @@
   </div>
   <p style="text-align: center;">Estado: {{detail.data.status}}</p>
   <div class="button-take-orders">
-    <button class="btn-delivered">Entregado</button>
-    <button class="btn-delete">Eliminar</button>
+    <button class="btn-delivered" (click)="deliveryOrder(detail.id)">Entregado</button>
+    <button class="btn-delete" (click)="deleteOrder(detail.id)">Eliminar</button>
   </div>
 </div>
