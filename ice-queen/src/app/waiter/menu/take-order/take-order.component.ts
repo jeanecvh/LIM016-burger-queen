@@ -98,10 +98,10 @@ export class TakeOrderComponent implements OnInit {
 
     //fechaCreacion: new Date
     //fechaTerminada: new Date
-    let dateDay = new Date().toLocaleDateString(); 
-    let hourDay = `${new Date().getHours().toString().padStart(2, "0")}`+":"+`${new Date().getMinutes().toString().padStart(2, "0")}`; 
-    //*Capturamos la fecha y hora this.orderDate.push(new OrderDate(dateDay, hourDay.toString().padStart(2, "0"))); 
-    this.orderDate.push(new OrderDate(dateDay, hourDay.toString().padStart(2, "0"))); 
+    let dateDay = new Date().toLocaleDateString();
+    let hourDay = `${new Date().getHours().toString().padStart(2, "0")}`+":"+`${new Date().getMinutes().toString().padStart(2, "0")}`;
+    //*Capturamos la fecha y hora this.orderDate.push(new OrderDate(dateDay, hourDay.toString().padStart(2, "0")));
+    this.orderDate.push(new OrderDate(dateDay, hourDay.toString().padStart(2, "0")));
 
     const orderObj =  new Orders(this.clientName, this.table, this.nuevo, this.orderDate, this.total, this.status, 0, "00:00");
 
@@ -152,7 +152,7 @@ export class TakeOrderComponent implements OnInit {
           confirmButtonColor:'#94d154'
         }).then(clean)
       } else if (result.isDenied) {
-        Swal.fire('Changes are not saved', '', 'info')
+        Swal.fire('Cambios no guardados', '', 'info')
       }
     })
 

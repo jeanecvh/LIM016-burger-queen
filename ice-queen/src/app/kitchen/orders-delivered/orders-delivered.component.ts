@@ -1,17 +1,20 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FirestoreService } from '../../services/firestore.service';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
-  selector: 'app-orders',
-  templateUrl: './orders.component.html'
+  selector: 'app-orders-delivered',
+  templateUrl: './orders-delivered.component.html'
 })
-
-export class OrdersComponent implements OnInit {
-
+export class OrdersDeliveredComponent implements OnInit {
 
   @Input() order!: any;
 
   allOrders: any [] =[];
+  //time:any= "00:00:00";
+  //runningTime:any = 0;
+  //timeInterval:any;
+  //id:string = '';
+
 
   constructor(
     private firestoreService: FirestoreService

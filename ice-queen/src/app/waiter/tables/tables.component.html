@@ -1,9 +1,9 @@
-<section id="tables-container" class="tables-container">
-  <div id="tables-area" class="tables-area">
-    <app-cards style="display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      /* gap: 5px 5px; */
-      width: auto;"></app-cards>
-  </div>
+<section id="tables-container" class="tables-container" style="display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+/* gap: 5px 5px; */
+width: auto;">
+
+  <app-cards [detail]="detail" *ngFor="let detail of (allOrders | filterStatus:'pendiente':'preparacion')"  id="{{detail.id}}"></app-cards>
+
 </section>
 

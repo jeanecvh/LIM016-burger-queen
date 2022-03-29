@@ -1,14 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FirestoreService } from '../../services/firestore.service';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
-  selector: 'app-orders',
-  templateUrl: './orders.component.html'
+  selector: 'app-orders-for-delivery',
+  templateUrl: './orders-for-delivery.component.html',
 })
-
-export class OrdersComponent implements OnInit {
-
-
+export class OrdersForDeliveryComponent implements OnInit {
   @Input() order!: any;
 
   allOrders: any [] =[];
@@ -51,5 +48,4 @@ export class OrdersComponent implements OnInit {
       }
     })
   }
-
 }

@@ -18,12 +18,13 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import {getFirestore, provideFirestore}  from '@angular/fire/firestore';
 import { WaiterModule } from './waiter/waiter.module';
 import { KitchenModule } from './kitchen/kitchen.module';
+import { FilterStatusPipe } from './pipes/filter-status.pipe';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +41,7 @@ import { KitchenModule } from './kitchen/kitchen.module';
     HttpClientModule,
     WaiterModule,
     provideFirestore(() => getFirestore()),
-    KitchenModule,
+    KitchenModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
