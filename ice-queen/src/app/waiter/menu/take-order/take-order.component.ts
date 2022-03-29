@@ -40,7 +40,7 @@ export class TakeOrderComponent implements OnInit {
     this.SaveOrdersService.disparadorSaveOrder.subscribe(data => {
       this.productList.push({data, amount: 1});
       console.log('que es data',data)
-      console.log('que da product list',this.productList)
+      console.log('que da product list en ngOnInit',this.productList)
       this.totalPrice();
   });
   }
@@ -60,7 +60,7 @@ export class TakeOrderComponent implements OnInit {
       this.productList.splice(index,1);
       this.totalPrice();
     }
-    console.log(this.productList);
+    console.log('LIST OF PRODUCT:',this.productList);
     //return this.productList;
   }
 
@@ -92,20 +92,31 @@ export class TakeOrderComponent implements OnInit {
       title: 'Orden registrada con éxito'
     })
 
-    this.productList.forEach((product) => {
+    this.productList.map((product) => {
       this.nuevo.push(new Product(product.amount, product.data.data.flavors));
+      console.log('product-nuevo:', this.nuevo)
     })
 
     //fechaCreacion: new Date
     //fechaTerminada: new Date
     let dateDay = new Date().toLocaleDateString();
     let hourDay = `${new Date().getHours().toString().padStart(2, "0")}`+":"+`${new Date().getMinutes().toString().padStart(2, "0")}`;
-    //*Capturamos la fecha y hora this.orderDate.push(new OrderDate(dateDay, hourDay.toString().padStart(2, "0")));
+    //*Capturamos la fecha y hora
     this.orderDate.push(new OrderDate(dateDay, hourDay.toString().padStart(2, "0")));
-
+    console.log('orderDate-nuevo:', this.orderDate)
     const orderObj =  new Orders(this.clientName, this.table, this.nuevo, this.orderDate, this.total, this.status, 0, "00:00");
 
     console.log('what is orderOBJ',orderObj);
+    //Limpiamos las variables para que los arrays no se recarguen con la información anterior
+    this.clientName = "";
+    this.table = "";
+    this.productList = [];
+    this.subTotal = 0;
+    this.igv = 0;
+    this.total = 0;
+    this.status= "";
+    this.orderDate = [];
+    this.nuevo=[];
     this.firestore.sendOrdeFireStore(orderObj).
     then(() => {console.log('Orden registrada con éxito!');
     //?Mandando con disparador get-otder-status
