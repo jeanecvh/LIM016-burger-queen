@@ -35,10 +35,10 @@ export class CardsOrderComponent implements OnInit {
     console.log("select", button);
     let selectValue = (<HTMLInputElement>document.getElementById(this.detail.id)).value;
     if (button !== null) {
-      if (selectValue == "accepted") {
+      if (selectValue == "preparacion") {
         this.startTime = this.detail.data.startTime;
         this.start(this.startTime)
-      } else if (selectValue == "ready") {
+      } else if (selectValue == "listo") {
         console.log("este select está listo");
         console.log(this.detail.data.readyTime);
         this.time = this.detail.data.readyTime;
@@ -47,12 +47,12 @@ export class CardsOrderComponent implements OnInit {
   }
 
   orderStatus($event:any){
-    if($event.target.value == 'accepted'){
+    if($event.target.value == 'pendiente'){
       this.startTime = Date.now();
       console.log('START',this.time)
       this.sendToPreparation($event.target.name)
       this.firestoreService.updateStatus(this.detail.id, this.startTime)
-    } else if ($event.target.value == 'ready'){
+    } else if ($event.target.value == 'preparacion'){
       console.log('se pausa el cronómetro');
       this.pause()
       this.firestoreService.updateStatus(this.detail.id,this.startTime)

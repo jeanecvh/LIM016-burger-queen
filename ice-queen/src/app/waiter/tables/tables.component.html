@@ -3,7 +3,7 @@ grid-template-columns: 1fr 1fr 1fr;
 /* gap: 5px 5px; */
 width: auto;">
 
-  <app-cards [detail]="detail" *ngFor="let detail of (allOrders | filterStatus:'pendiente':'preparacion')"  id="{{detail.id}}"></app-cards>
+  <app-cards [detail]="detail" *ngFor="let detail of (allOrders | filterStatusWaiter:'pendiente':'preparacion':'listo')"  id="{{detail.id}}"></app-cards>
 
 </section>
 

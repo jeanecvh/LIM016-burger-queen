@@ -29,7 +29,8 @@
     </table>
   </div>
   <p style="text-align: center;">Estado: {{detail.data.status}}</p>
-  <p style="text-align: center;">Time: {{time}} </p>
+  <p style="text-align: center;">Time: {{detail.data.status == 'listo'? detail.data.readyTime : time}}
+  </p>
 
   <!--<div class="button-take-orders" >
     <ul>
@@ -41,10 +42,11 @@
       <option value="listo">Listo</option>
     </select>
 
+
   </div>-->
 
     <div class="button-take-orders">
-      <button class="btn-take-order" value="accepted" name="{{detail.id}}" id="{{detail.id}}" (click)="orderStatus($event)">Tomar Pedido</button>
-      <button class="btn-finish-order" value="ready" name="{{detail.id}}"  id="{{detail.id}}" (click)="orderStatus($event)">Entregar Pedido</button>
+      <button *ngIf="detail.data.status == 'pendiente'"  class="btn-take-order" value={{detail.data.status}} name="{{detail.id}}" id="{{detail.id}}" (click)="orderStatus($event)">Tomar Pedido</button>
+      <button *ngIf="detail.data.status == 'preparacion'" class="btn-finish-order" value={{detail.data.status}} name="{{detail.id}}"  id="{{detail.id}}" (click)="orderStatus($event)">Entregar Pedido</button>
     </div>
 </div>
