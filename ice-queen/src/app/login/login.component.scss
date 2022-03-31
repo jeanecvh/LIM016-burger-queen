@@ -1,12 +1,61 @@
 /*.login-container{
   height: 100vh;
 }*/
-.container-input{
 
+.container{
+  display: grid;
+  grid-template-columns: 1.5fr 0.1fr 1.5fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "login-left login-center login-right";
+    margin-top: 5rem;
+    margin-left: 6.5rem;
+  .login-text-div{
+    margin-top: 1rem;
+  }
+}
+@media screen and (min-width: 1296px){
+  .container{
+    margin-left: 8.5rem;
+  }
+  .container-input{
+    margin-left: 7.5rem;
+    margin-top: 5rem;
+  }
+}
+
+@media screen and (max-width: 1116px){
+  .container{
+    margin-left: 4.5rem;
+  }
+  .container-input{
+    margin-left: 2.5rem;
+  }
+}
+
+
+.login-left {
+  grid-area: login-left;
+  color: rgba(75, 72, 72, 0.548);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 400px
+
+ }
+.login-center {
+  grid-area: login-center;
+  border-left: 1px solid rgba(131, 127, 127, 0.548);
+ }
+.login-right {
+  grid-area: login-right;
+ }
+
+.container-input{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
 }
 
 .text-login{
@@ -71,7 +120,10 @@
       height: 81vh;
     }
     .container-input div{
-      margin: 1% 0%
+      margin: 3% 0%;
+    }
+    .text-login{
+      margin-top: 11%;
     }
   }
   @media only screen and ( max-width: 768px ){
@@ -104,62 +156,37 @@
 
   }
 
+  @media screen and (max-width: 820px) {
+    .container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 2rem;
+    }
 
-/*
-.mat-divider{
-  color: #F16078;
-  height: 100px;
-  border-right-width: 4px;
-}
-:host ::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 1.3em 10vw !important;}
-:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-label { margin-top:0px; }
-:host ::ng-deep label.ng-star-inserted { transform: translateY(1em) scale(.2) !important; }
-// mat-icon-stepper selected color change
-::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
-  background-color: rgb(75, 72, 72, 0.548)!important;
-}
 
-//input outline color
-:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-  color: rgba(75, 72, 72, 0.226)!important;
-  opacity: 1!important;
-}
+    .input-email,
+    .input-password{
+      width: 48vw;
+    }
 
-//mat-input focused color
-:host ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-  color: rgb(75, 72, 72, 0.548)!important;
-}
 
-// mat-input error outline color
-:host ::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
-  color: rgba(75, 72, 72, 0.548)!important;
-  opacity: 0.8!important;
-}
+  }
 
-// mat-input carent color
-:host ::ng-deep .mat-input-element {
-  caret-color: rgba(75, 72, 72, 0.548)!important;
-}
+  @media screen and (min-width: 820px) {
+    .login-left{
+      margin-left: 2.5rem;
+      margin-top: 3rem;
+    }
 
-// mat-input error carent color
-:host ::ng-deep .mat-form-field-invalid .mat-input-element, .mat-warn .mat-input-element {
-  caret-color: rgb(75, 72, 72, 0.548)!important;
-}
+    .input-email,
+    .input-password{
+      margin-bottom: 2rem;
+    }
 
-// mat-label normal state style
-:host ::ng-deep .mat-form-field-label {
-  color: rgba(75, 72, 72, 0.548)!important;
-  // color: $mainColor!important;
-}
+    .text-login{
+      margin-bottom: 1rem;
+      margin-top: 3rem;
+    }
 
-// mat-label focused style
-:host ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-  color: rgba(75, 72, 72, 0.548)!important;
-}
-
-// mat-label error style
-:host ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
-  color: rgba(75, 72, 72, 0.548)!important;
-}
-
-*/
+  }

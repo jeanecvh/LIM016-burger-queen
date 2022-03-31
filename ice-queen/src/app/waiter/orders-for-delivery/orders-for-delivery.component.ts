@@ -4,6 +4,7 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 @Component({
   selector: 'app-orders-for-delivery',
   templateUrl: './orders-for-delivery.component.html',
+  styleUrls: ['./orders-for-delivery.component.scss']
 })
 export class OrdersForDeliveryComponent implements OnInit {
   @Input() order!: any;
@@ -40,11 +41,9 @@ export class OrdersForDeliveryComponent implements OnInit {
       const newA = a.data.date[0].monthDateYear.split('/').reverse().join('-')
       const newB = b.data.date[0].monthDateYear.split('/').reverse().join('-');
       if(newA == newB){
-        return - b.data.date[0].hourMinutes.localeCompare(a.data.date[0].hourMinutes);
+        return  b.data.date[0].hourMinutes.localeCompare(a.data.date[0].hourMinutes);
       } else {
-        const time = (a.data.date[0].hourMinutes)
-        //console.log(time)
-        return -new Date(newB) - -new Date(newA)
+        return +new Date(newB) - +new Date(newA)
       }
     })
   }

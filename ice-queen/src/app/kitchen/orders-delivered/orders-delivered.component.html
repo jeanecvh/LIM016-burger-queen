@@ -1,5 +1,3 @@
-<section class="container-orders-delivered" style="display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-width: auto;">
+<section class="container-orders-delivered">
 <app-cards-order [detail]="detail" *ngFor="let detail of (allOrders | filterStatus:'listo':'entregado')"  id="{{detail.id}}"></app-cards-order>
 </section>

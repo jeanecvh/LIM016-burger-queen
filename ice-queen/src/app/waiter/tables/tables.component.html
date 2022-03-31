@@ -1,7 +1,4 @@
-<section id="tables-container" class="tables-container" style="display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-/* gap: 5px 5px; */
-width: auto;">
+<section id="tables-container" class="tables-container">
 
   <app-cards [detail]="detail" *ngFor="let detail of (allOrders | filterStatusWaiter:'pendiente':'preparacion':'listo')"  id="{{detail.id}}"></app-cards>
 

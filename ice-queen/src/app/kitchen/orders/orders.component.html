@@ -1,7 +1,5 @@
 
-<section class="container-orders" style="display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-width: auto;">
+<section class="container-orders">
 <app-cards-order [detail]="detail" *ngFor="let detail of (allOrders | filterStatus:'pendiente':'preparacion')"></app-cards-order>
 </section>
 

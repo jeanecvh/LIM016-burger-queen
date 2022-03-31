@@ -3,7 +3,8 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
   selector: 'app-orders-delivered',
-  templateUrl: './orders-delivered.component.html'
+  templateUrl: './orders-delivered.component.html',
+  styleUrls: ['./orders-delivered.component.scss']
 })
 export class OrdersDeliveredComponent implements OnInit {
 

@@ -1,12 +1,16 @@
 
 <section id="login-container" class="login-container">
-  <mat-grid-list cols="2" rowHeight="1:1">
-    <mat-grid-tile class="login-left">
+  <div class="container">
+    <div class="login-left">
       <div class="login-img-div">
         <img src="./../../../assets/img/frozen-yogurt.png" alt="">
       </div>
-    </mat-grid-tile>
-    <mat-grid-tile>
+      <div class="login-text-div">
+        <h2>Sientete bien</h2>
+      </div>
+    </div>
+    <div class="login-center"></div>
+    <div class="login right">
       <div class="container-input">
         <div class="text-login">
           <h1>Iniciar Sesión</h1>
@@ -29,7 +33,7 @@
           <button mat-raised-button color="primary" (click)="ingresar()">INGRESAR</button>
         </div>
       </div>
-    </mat-grid-tile>
-  </mat-grid-list>
+    </div>
+  </div>
 </section>
 

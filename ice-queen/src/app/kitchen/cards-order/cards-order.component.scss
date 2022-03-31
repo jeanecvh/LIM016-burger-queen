@@ -1,10 +1,8 @@
 .card-table-container{
-  width: 19vw;
   border-color: #C4C4C4;
   background-color: rgba(196, 196, 196, 0.432);
   border: 1px solid #C4C4C4;
   margin: 1.25rem;
-  width: 25vw;
 }
 
 .card-table-tittle{
@@ -23,7 +21,6 @@
   border-radius: 0.5rem;
   overflow-y:scroll;
   height:40vh;
-  width: 20vw;
 }
 
 .button-take-orders{
@@ -124,11 +121,11 @@
   .tables-products {
     height: 27vh;
   }
-
-  .container-orders{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: auto;
 }
+
+@media only screen and ( max-width: 820px ){
+  .tables-products{
+    height: 18vh;
+  }
 
 }
