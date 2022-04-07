@@ -13,7 +13,7 @@
 
 ## 1. Ice-Queen 🍨
 
-<div style="text-align: center;">
+<div align="center" >
   <img src="./ice-queen/src/assets/img/logo-Ice-Queen.png" style="width:20vw">
 </div>
 
@@ -119,16 +119,19 @@ rápidamente a los clientes que las hicieron.
 
 ### 3.1.3 Vídeo desarrollativo del proyecto
 
-<div style="text-align: center;">
+<div align="center">
   <img src="./ice-queen/src/assets/img/video-ice-queen.gif">
 </div>
 
-** Para poder hacer uso de la aplicación podrás ingresar con los siguientes datos:
+<div align="center">
+  ** Para poder hacer uso de la aplicación podrás ingresar con los siguientes datos:
 
 | Usuario| Contraseña |
 | ------------- | ------------- |
 | workers@ice-queen.com  | 123456  |
 | chef@ice-queen.com | chef123456  |
+</div>
+
 
 
 ## 4. Tecnologías empleadas 👩🏾‍💻
