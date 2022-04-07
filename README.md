@@ -112,11 +112,11 @@ rápidamente a los clientes que las hicieron.
 [Wireframe](https://www.figma.com/file/9Xufxpn3hjHaPSEAyoHv2l/Prototipo-Burger-Queen?node-id=274%3A2)
 
 ### 3.1.2 Prototipo de Alta fidelidad:📝
-[Prototipo de alta fidelidad](hhttps://www.figma.com/file/9Xufxpn3hjHaPSEAyoHv2l/?node-id=0%3A1)
+[Prototipo de alta fidelidad](https://www.figma.com/file/9Xufxpn3hjHaPSEAyoHv2l/?node-id=0%3A1)
 
 ### 3.1.3 Vídeo desarrollativo del proyecto
 
-<video src="./ice-queen/src/assets/img/video-ice-queen.mp4" controls="controls" autoplay="autoplay"></video>
+<img src="./ice-queen/src/assets/img/video-ice-queen.gif" controls="controls" autoplay="autoplay">
 
 ## 4. Tecnologías empleadas 👩🏾‍💻
 
