@@ -13,7 +13,7 @@
 
 ## 1. Ice-Queen 🍨
 
-<img src="./ice-queen/src/assets/img/logo-Ice-Queen.png" style="align-content: center; width:50vw">
+<img src="./ice-queen/src/assets/img/logo-Ice-Queen.png" style="align-content: center; width:20vw">
 
 Ice-Queen es una aplicación para un restaurante de helados. La cual podrá ayudar al mesero y al chef a cumplir sus roles de manera eficiente.
 
@@ -116,7 +116,7 @@ rápidamente a los clientes que las hicieron.
 
 ### 3.1.3 Vídeo desarrollativo del proyecto
 
-<video src="./ice-queen/src/assets/img/video-ice-queen.mp4" width="400px" controls="controls" autoplay="autoplay"></video>
+<video src="./ice-queen/src/assets/img/video-ice-queen.mp4" controls="controls" autoplay="autoplay"></video>
 
 ## 4. Tecnologías empleadas 👩🏾‍💻
 
