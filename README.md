@@ -3,17 +3,20 @@
 ## Índice
 
 * [1. Ice-Queen](#Ice-Queen)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Pistas, tips y lecturas complementarias](#6-pistas-tips-y-lecturas-complementarias)
+* [2. Historia de Usuario](#2-Historia-de-Usuario)
+* [3. Realización del Proyecto](#Realización-del-Proyecto)
+* [4. Tecnologías empleadas](#Tecnologías-empleadas)
+* [5. Fuentes](#Fuentes)
+* [6. Autores](#Autores)
 
 ***
 
 ## 1. Ice-Queen 🍨
 
-<img src="./ice-queen/src/assets/img/logo-Ice-Queen.png" style="align-content: center; width:20vw">
+<div style="text-align: center;">
+  <img src="./ice-queen/src/assets/img/logo-Ice-Queen.png" style="width:20vw">
+</div>
+
 
 Ice-Queen es una aplicación para un restaurante de helados. La cual podrá ayudar al mesero y al chef a cumplir sus roles de manera eficiente.
 
@@ -116,13 +119,23 @@ rápidamente a los clientes que las hicieron.
 
 ### 3.1.3 Vídeo desarrollativo del proyecto
 
-<img src="./ice-queen/src/assets/img/video-ice-queen.gif" controls="controls" autoplay="autoplay">
+<div style="text-align: center;">
+  <img src="./ice-queen/src/assets/img/video-ice-queen.gif">
+</div>
+
+** Para poder hacer uso de la aplicación podrás ingresar con los siguientes datos:
+
+| Usuario| Contraseña |
+| ------------- | ------------- |
+| workers@ice-queen.com  | 123456  |
+| chef@ice-queen.com | chef123456  |
+
 
 ## 4. Tecnologías empleadas 👩🏾‍💻
 
 ### WireFrame
 
-- [ANGULAR](https://angular.io/)
+- [Angular](https://angular.io/)
 
 ### Trabajo Colaborativo
 
@@ -152,3 +165,5 @@ rápidamente a los clientes que las hicieron.
 - [Jeanella Hugo](https://github.com/jeanecvh)
 - [Brisset Corcino](https://github.com/Brisset-91)
 - Equipo de Laboratoria LIM016
+
+
