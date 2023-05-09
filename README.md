@@ -136,7 +136,7 @@ rápidamente a los clientes que las hicieron.
 
 ## 4. Tecnologías empleadas 👩🏾‍💻
 
-### WireFrame
+### Framework
 
 - [Angular](https://angular.io/)
 
