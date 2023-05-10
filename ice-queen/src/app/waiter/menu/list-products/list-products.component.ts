@@ -38,7 +38,7 @@ export class ListProductsComponent implements OnInit {
 
   categoryListener(e:any){
     this.category=[]
-    this.nameCategory = e.target.name
+    this.nameCategory = e.target.name;
     this.listProducts(this.nameCategory)
   }
 
